@@ -57,6 +57,10 @@ src/updater/TomeNET-Updater.64b
 *.txt
 *.opt.bak
 *.prf.bak
+*.opt
+*.prf
+!global.opt
+!global.prf
 
 # Server stdout log
 tomenet-stdout.log
