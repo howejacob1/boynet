@@ -238,7 +238,13 @@ bool quiet_mode = FALSE;
 bool noweather_mode = FALSE;
 bool no_lua_updates = FALSE;
 bool skip_motd = FALSE;
-byte save_chat = 0;
+/* Always auto-save all messages on quit to avoid confirmation prompt */
+#define AUTO_SAVE_ALL_MESSAGES
+#ifdef AUTO_SAVE_ALL_MESSAGES
+byte save_chat = 2;	/* Automatically save all messages on quit */
+#else
+byte save_chat = 0;	/* Prompt for save on quit */
+#endif
 
 
 client_opts c_cfg;
