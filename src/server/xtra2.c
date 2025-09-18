@@ -10348,10 +10348,10 @@ void player_death(int Ind) {
 			if (p_ptr->au <= 50000) ;
 			else if (p_ptr->au <= 500000) p_ptr->au = (((p_ptr->au) * 100) / (100 + ((p_ptr->au - 50000) / 4500)));
 			else p_ptr->au /= 2;
- #else /* lose 5..33% */
+ #else /* lose 1..10% */
 			/* overflow handling */
-			if (p_ptr->au <= 20000000) p_ptr->au = (p_ptr->au * (rand_int(29) + 67)) / 100;
-			else p_ptr->au = (p_ptr->au / 100) * (rand_int(29) + 67);
+			if (p_ptr->au <= 20000000) p_ptr->au = (p_ptr->au * (rand_int(10) + 90)) / 100;
+			else p_ptr->au = (p_ptr->au / 100) * (rand_int(10) + 90);
  #endif
 			s_printf("%d.\n", p_ptr->au);
 
@@ -10512,8 +10512,8 @@ void player_death(int Ind) {
 		if (p_ptr->au <= 50000) ;
 		else if (p_ptr->au <= 500000) p_ptr->au = (((p_ptr->au) * 100) / (100 + ((p_ptr->au - 50000) / 4500)));
 		else p_ptr->au /= 2;
-#else /* lose 5..33% */
-		p_ptr->au = (p_ptr->au * (rand_int(29) + 67)) / 100;
+#else /* lose 1..10% */
+		p_ptr->au = (p_ptr->au * (rand_int(10) + 90)) / 100;
 #endif
 
 		if (p_ptr->max_plv >= cfg.newbies_cannot_drop) {
