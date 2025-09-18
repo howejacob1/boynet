@@ -10538,7 +10538,7 @@ void player_death(int Ind) {
 	   (currently, true arts won't be dropped either in case of winner-suicide, as it makes sense.) */
 	p_ptr->tmp_x = //was: bool finally_killed; /* non-suicide no-rez-death */
 	    ((p_ptr->ghost || (hell && !p_ptr->suicided)) ||
-	    insanity ||
+	    (insanity && !(p_ptr->mode & MODE_EVERLASTING)) ||
 	    streq(p_ptr->died_from, "indecisiveness") ||
 	    streq(p_ptr->died_from, "indetermination") ||
 	    ((p_ptr->lives == 1 + 1) && cfg.lifes && !p_ptr->suicided &&
