@@ -3,7 +3,7 @@
 # Automatic option dump
 
 # Option 'Rogue-like keyset (for covering lack of a numpad)'
-X:rogue_like_commands
+Y:rogue_like_commands
 
 # Option 'Display tips/warnings for new players'
 Y:newbie_hints
