@@ -1,0 +1,576 @@
+
+
+# Automatic option dump
+
+# Option 'Rogue-like keyset (for covering lack of a numpad)'
+X:rogue_like_commands
+
+# Option 'Display tips/warnings for new players'
+Y:newbie_hints
+
+# Option 'Censor certain swear words in public messages'
+Y:censor_swearing
+
+# Option 'Highlight chat messages containing your name'
+Y:highlight_chat
+
+# Option 'Beep on chat messages containing your name'
+Y:highbeep_chat
+
+# Option 'Beep when receiving a private message'
+X:page_on_privmsg
+
+# Option 'Beep when receiving a private message while AFK'
+Y:page_on_afk_privmsg
+
+# Option 'Double height of the map shown in the main window'
+X:big_map
+
+# Option 'Certain fonts only: Walls look like solid blocks'
+Y:font_map_solid_walls
+
+# Option 'Animate lantern light, flickering in colour'
+Y:view_animated_light
+
+# Option 'Generally enable lighting/shading for wall grids'
+Y:wall_lighting
+
+# Option 'Use special colors for lamp-lit wall grids'
+Y:view_lamp_walls
+
+# Option 'Use special colors to shade wall grids'
+Y:view_shade_walls
+
+# Option 'Generally enable lighting/shading for floor grids'
+Y:floor_lighting
+
+# Option 'Use special colors for lamp-lit floor grids'
+Y:view_lamp_floor
+
+# Option 'Use special colors to shade floor grids'
+Y:view_shade_floor
+
+# Option 'Lamp light affects more floor/wall types'
+Y:view_light_extra
+
+# Option 'Beep/message about critical hitpoints/sanity'
+X:alert_hitpoint
+
+# Option 'Beep/message about critically low mana pool'
+X:alert_mana
+
+# Option 'Beep when taking damage while AFK'
+X:alert_afk_dam
+
+# Option 'Beep when taking damage while looking elsewhere'
+Y:alert_offpanel_dam
+
+# Option 'Show experience bar instead of a number'
+Y:exp_bar
+
+# Option 'List only unslain uniques for your local party'
+X:uniques_alive
+
+# Option 'Beep on attacking a unique you already killed'
+X:warn_unique_credit
+
+# Option 'Chat only with players on the same floor'
+X:limit_chat
+
+# Option 'Don't show AFK toggle messages of other players'
+X:no_afk_msg
+
+# Option 'Display overview resistance/boni page at startup'
+X:overview_startup
+
+# Option 'Allow users to page you (recommended!)'
+Y:allow_paging
+
+# Option 'Beep on misc warnings and errors'
+Y:ring_bell
+
+# Option 'Stats are represented in a linear way'
+X:linear_stats
+
+# Option 'Show the experience needed for next level'
+X:exp_need
+
+# Option 'Show dungeon level in feet'
+Y:depth_in_feet
+
+# Option 'Display newbie suicides'
+Y:newb_suicide
+
+# Option 'Show weights in object listings'
+Y:show_weights
+
+# Option 'Add half-hourly time stamps to chat window'
+X:time_stamp_chat
+
+# Option 'Hide unusable skills'
+Y:hide_unusable_skills
+
+# Option 'Don't display known 'flavours' in item names'
+X:short_item_names
+
+# Option 'Don't clear messages in the top line if avoidable'
+X:keep_topline
+
+# Option 'Add target informations to the message history'
+X:target_history
+
+# Option 'Suppress server messages as far as possible'
+X:taciturn_messages
+
+# Option 'Always show lists in item/skill selection'
+Y:always_show_lists
+
+# Option 'Disable weather visuals and sounds completely'
+X:no_weather
+
+# Option 'Show a more compact player list in @ screen'
+X:player_list
+
+# Option 'Compacts the player list in @ screen even more'
+X:player_list2
+
+# Option 'Flash own character icon after far relocation'
+Y:flash_player
+
+# Option 'Highlight own character icon with the cursor'
+X:highlight_player
+
+# Option 'Use very basic static symbols for players'
+X:basic_players_symb
+
+# Option 'Show animated text colours in sub-windows'
+Y:recall_flicker
+
+# Option 'Skip safety question when selling items'
+X:no_verify_sell
+
+# Option 'Skip safety question when destroying items'
+X:no_verify_destroy
+
+# Option 'Set 'AFK mode' automatically'
+Y:auto_afk
+
+# Option 'Disconnect when idle for 30s while starving'
+Y:idle_starve_kick
+
+# Option 'Prevent floating for a short while after death'
+X:safe_float
+
+# Option 'Abort macro if item is missing or an action fails'
+Y:safe_macros
+
+# Option 'Remove unique monster inscription on pick-up'
+X:auto_untag
+
+# Option 'Clear @-inscriptions on taking item ownership'
+X:clear_inscr
+
+# Option 'Also use predefined server-side auto-inscriptions'
+X:auto_inscr_server
+
+# Option 'Merge inscriptions when stacking'
+Y:stack_force_notes
+
+# Option 'Merge discounts when stacking'
+Y:stack_force_costs
+
+# Option 'Allow weapons and armor to stack'
+Y:stack_allow_items
+
+# Option 'Allow wands/staffs/rods to stack'
+Y:stack_allow_devices
+
+# Option 'For ammo/misc items always operate on whole stack'
+X:whole_ammo_stack
+
+# Option 'Repeat obvious commands (eg search/tunnel)'
+Y:always_repeat
+
+# Option 'Pick things up by default'
+X:always_pickup
+
+# Option 'Use old target by default'
+Y:use_old_target
+
+# Option 'Stop the retaliator when protected by GoI etc'
+X:autooff_retaliator
+
+# Option 'Don't melee if other auto-retaliation ways fail'
+X:fail_no_melee
+
+# Option 'Use very basic static colours for players'
+X:basic_players_col
+
+# Option 'Automatically set target to the nearest enemy'
+X:auto_target
+
+# Option 'Thin down screen flush signals to avoid freezing'
+Y:thin_down_flush
+
+# Option 'Disable delays from flush signals'
+X:disable_flush
+
+# Option 'Run past stairs'
+X:find_ignore_stairs
+
+# Option 'Run through open doors'
+Y:find_ignore_doors
+
+# Option 'Run past known corners'
+Y:find_cut
+
+# Option 'Run into potential corners'
+Y:find_examine
+
+# Option 'Disturb whenever any monster moves'
+X:disturb_move
+
+# Option 'Disturb whenever viewable monster moves'
+X:disturb_near
+
+# Option 'Disturb whenever map panel changes'
+X:disturb_panel
+
+# Option 'Disturb whenever player state changes'
+X:disturb_state
+
+# Option 'Disturb whenever boring things happen'
+X:disturb_minor
+
+# Option 'Disturb whenever various things happen'
+X:disturb_other
+
+# Option 'Map remembers all perma-lit grids'
+Y:view_perma_grids
+
+# Option 'Map remembers all torch-lit grids'
+X:view_torch_grids
+
+# Option 'Reduce light radius when running'
+X:view_reduce_light
+
+# Option 'Reduce view radius in town'
+X:view_reduce_view
+
+# Option 'Automatically open doors'
+Y:easy_open
+
+# Option 'Automatically disarm traps (except under items)'
+X:easy_disarm
+
+# Option 'Automatically tunnel walls'
+X:easy_tunnel
+
+# Option 'Use audio system for page/alert, if available'
+Y:audio_paging
+
+# Option 'Play page/alert sounds at master volume'
+X:paging_master_vol
+
+# Option 'Play page/alert sounds at maximum volume'
+X:paging_max_vol
+
+# Option 'Prevent re-playing sfx received after <100ms gap'
+Y:no_ovl_close_sfx
+
+# Option 'Allow overlapping combat sounds of same type'
+Y:ovl_sfx_attack
+
+# Option 'Don't play melee/launcher attack/miss sound fx'
+X:no_combat_sfx
+
+# Option 'Don't play basic spell/device attack sound fx'
+X:no_magicattack_sfx
+
+# Option 'Don't play attack-avoiding/neutralizing sound fx'
+X:no_defense_sfx
+
+# Option 'Skip every second attack sound'
+X:half_sfx_attack
+
+# Option 'Skip attack sounds based on speed and bpr'
+Y:cut_sfx_attack
+
+# Option 'Allow overlapping command sounds of same type'
+Y:ovl_sfx_command
+
+# Option 'Allow overlapping misc sounds of same type'
+Y:ovl_sfx_misc
+
+# Option 'Allow overlapping monster attack sfx of same type'
+Y:ovl_sfx_mon_attack
+
+# Option 'Allow ovl. monster spell/breath sfx of same type'
+Y:ovl_sfx_mon_spell
+
+# Option 'Allow overlapping misc monster sfx of same type'
+Y:ovl_sfx_mon_misc
+
+# Option 'Don't play basic monster attack sound fx'
+X:no_monsterattack_sfx
+
+# Option 'Play '3d' positional sound fx, via normal stereo'
+Y:positional_audio
+
+# Option 'Don't play ambient/weather sound in buildings'
+X:no_house_sfx
+
+# Option 'Play quieter ambient/weather sound in buildings'
+Y:quiet_house_sfx
+
+# Option 'Mute music+ambient sfx while AFK/idle in town'
+X:mute_when_idle
+
+# Option 'Beep when taking damage from starvation'
+Y:alert_starvation
+
+# Option '(deprecated) Use color if possible'
+Y:use_color
+
+# Option 'Prompt for various information (mimic polymorph)'
+X:other_query_flag
+
+# Option 'Don't loop song files but shuffle through them'
+X:shuffle_music
+
+# Option 'Display permanent vault walls in a special colour'
+X:permawalls_shade
+
+# Option 'Don't display messages in main window top line'
+X:topline_no_msg
+
+# Option 'Display look/target info in message window too'
+X:targetinfo_msg
+
+# Option 'Always update item timeout numbers on every tick'
+Y:live_timeouts
+
+# Option 'Flash own character icon when going badly insane'
+X:flash_insane
+
+# Option 'Get last words when the character dies'
+Y:last_words
+
+# Option 'Disturb whenever seeing any monster'
+X:disturb_see
+
+# Option 'Displays lore when killing a unique monster'
+Y:diz_unique
+
+# Option 'Displays lore on monster that killed you'
+Y:diz_death
+
+# Option 'Displays lore on monster that kills anyone'
+Y:diz_death_any
+
+# Option 'Displays lore on first-time monster kill'
+Y:diz_first
+
+# Option 'Screenshots are timestamped instead of numbered'
+Y:screenshot_format
+
+# Option 'Shade world surface colours depending on daytime'
+Y:palette_animation
+
+# Option 'Loop over all available songs instead of just one'
+Y:play_all
+
+# Option 'Show/accept only eligible items for ID/*ID*'
+Y:id_selection
+
+# Option 'Display hit points as bar instead of numbers'
+X:hp_bar
+
+# Option 'Display mana pool as bar instead of numbers'
+X:mp_bar
+
+# Option 'Display stamina as bar instead of numbers'
+X:st_bar
+
+# Option 'Run through monster traps'
+Y:find_ignore_montraps
+
+# Option 'Don't play beep/alert/page beeps through OS'
+X:quiet_os
+
+# Option 'Disable visual screen flash effect for lightning'
+X:disable_lightning
+
+# Option 'Don't disable macros while inside a store'
+X:macros_in_stores
+
+# Option 'Beep when an item selection fails'
+Y:item_error_beep
+
+# Option 'Keep the empty bottle when you quaff a potion'
+X:keep_bottle
+
+# Option 'Automatically disarm monster traps ('/edmt')'
+X:easy_disarm_montraps
+
+# Option 'Prevent using magic inside houses'
+X:no_house_magic
+
+# Option 'Disable shading effect for fainting light source'
+X:no_light_fainting
+
+# Option 'Automatically pickup items (see '/apickup')'
+X:auto_pickup
+
+# Option 'Automatically destroy items (see '/adestroy')'
+X:auto_destroy
+
+# Option 'Destroys ALL unmatched items. (Like A'#' in &.)'
+X:destroy_all_unmatched
+
+# Option 'Also show mana pool as huge bar (big_map only)'
+Y:mp_huge_bar
+
+# Option 'Also show sanity as huge bar (big_map only)'
+Y:sn_huge_bar
+
+# Option 'Also show HP pool as huge bar (big_map only)'
+Y:hp_huge_bar
+
+# Option 'Clone client chat and messages to stdout'
+X:clone_to_stdout
+
+# Option 'Clone client chat and messages to 'stdout.txt''
+X:clone_to_file
+
+# Option 'Start with first eligible song of a music event'
+X:first_song
+
+# Option 'Display equipment indices/weight in yellow'
+X:equip_text_colour
+
+# Option 'Colourize indices of items giving set bonus'
+Y:equip_set_colour
+
+# Option 'Colourize prices, AU and XP in 3-digit columns'
+X:colourize_bignum
+
+# Option 'Flash own character icon after close relocation'
+X:flash_player2
+
+# Option 'Automatically load form-specific macros on change'
+Y:load_form_macros
+
+# Option 'Disable all client-side auto-inscriptions'
+X:auto_inscr_off
+
+# Option 'Disable font-specific mapping for all floor feats'
+X:ascii_feats
+
+# Option 'Disable font-specific mapping for all items'
+X:ascii_items
+
+# Option 'Disable font-specific mapping for all monsters'
+X:ascii_monsters
+
+# Option 'Disable font-specific mapping for unique monsters'
+X:ascii_uniques
+
+# Option 'Disable all fast colour animations'
+X:no_flicker
+
+# Option 'Show stun status as huge bar (big_map only)'
+Y:stun_huge_bar
+
+# Option 'Auto-disable font_map_solid_walls for graphics'
+X:gfx_autooff_fmsw
+
+# Option 'Display status bars in solid style, not as '#''
+Y:solid_bars
+
+# Option 'Automatically pick up freshly dropped chemicals'
+Y:autopickup_chemicals
+
+# Option 'Inv/eq window only: Item-to-chat-paste extra info'
+Y:add_kind_diz
+
+# Option 'Hide artifact/monster lore pastes in public chat'
+X:hide_lore_paste
+
+# Option 'Autoretaliate instantly but forego reserve energy'
+Y:instant_retaliator
+
+# Option 'Show message if you start/stop burning in the sun'
+Y:sunburn_msg
+
+# Option 'Scroll the screen further away from the edges'
+Y:wide_scroll_margin
+
+# Option 'Flicker-free repaint, glitches on some systems'
+Y:gfx_palanim_repaint
+
+# Option 'May reduce flicker if gfx_palanim_repaint is off'
+Y:gfx_hack_repaint
+
+# Option 'Top line shows first line of multi-line messages'
+Y:topline_first
+
+# Option 'Always use plain ASCII symbols for weather'
+X:ascii_weather
+
+# Option 'Never use dual-mask grapics for weather'
+X:no2mask_weather
+
+# Option 'Server-defined auto-inscriptions for chemicals'
+Y:auto_inscr_server_ch
+
+# Option 'Swap CTRL+T and SHIFT+CTRL+T key (XHTML vs PNG)'
+X:screenshot_keys
+
+# Option 'Resume wilderness music even after non-wild music'
+Y:wild_resume_from_any
+
+# Option 'If wild_resume_from_any, also resume tavern/town'
+Y:tavern_town_resume
+
+# Option 'Also show stamina as huge bar (big_map only)'
+X:st_huge_bar
+
+# Option 'Display huge bars graphically if graphics are on'
+Y:huge_bars_gfx
+
+# Option 'Displays extra info on auto-inscriptions matching'
+X:autoinsc_debug
+
+# Option 'Suppress auto-pickup/destroy while not in dungeon'
+X:autoloot_dunonly
+
+# Option 'Suppress auto-pck/des if owned and not in dungeon'
+X:autoloot_dununown
+
+# Option 'Flash 'Starved' food status by colour animation.'
+Y:flash_starvation
+
+# Option 'Empty inven prompts auto-switch to equip or bag.'
+Y:autoswitch_inven
+
+
+# Window 'Msg/Chat', Flag 'Display all messages'
+W:1:4
+
+# Window 'Inventory', Flag 'Display inven/equip'
+W:2:0
+
+# Window 'Character', Flag 'Display character'
+W:3:2
+
+# Window 'Chat', Flag 'Display chat messages'
+W:4:5
+
+# Window 'Equipment', Flag 'Display equip/inven'
+W:5:1
+
+
+
+
+
