@@ -3848,6 +3848,11 @@ bool player_birth(int Ind, int conn, connection_t *connp) {
 	p_ptr->artifact_reset = ABS(artifact_reset);
 	p_ptr->fluent_artifact_reset = FALSE;
 
+	/* Enable instant resurrection by default for everlasting characters */
+	if (p_ptr->mode & MODE_EVERLASTING) {
+		p_ptr->insta_res = TRUE;
+	}
+
 	/* Prepare newbie-aiding warnings that ought to occur only
 	   once (not necessarily implemented like that atm) - C. Blue */
 	p_ptr->newbie_hints = TRUE;
