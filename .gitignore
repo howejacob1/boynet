@@ -60,6 +60,7 @@ src/updater/TomeNET-Updater.64b
 *.opt
 *.prf
 *.pre_
+*~
 !global.opt
 !global.prf
 
