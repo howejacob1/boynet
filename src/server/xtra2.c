@@ -26,7 +26,7 @@
  * cf. GHOST_FADING in dungeon.c
  */
 #ifdef ENABLE_INSTANT_RES
-#define GHOST_XP_LOST	35
+#define GHOST_XP_LOST	1
 #else
 #define GHOST_XP_LOST	40
 #endif
@@ -37,7 +37,7 @@
 /*
  * What % of exp points will be lost on instant resurrection?
  */
-#define INSTANT_RES_XP_LOST	50
+#define INSTANT_RES_XP_LOST	5
 
 /*
  * Chance of an item teleporting away when player dies, in percent. [10]
