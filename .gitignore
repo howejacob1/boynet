@@ -49,3 +49,11 @@ src/common/w_z_pack.c
 # TomeNET updater binaries
 src/updater/TomeNET-Updater.32b
 src/updater/TomeNET-Updater.64b
+
+# User files and backup files
+*.tmp
+*.dna
+*.xhtml
+*.txt
+*.opt.bak
+*.prf.bak
