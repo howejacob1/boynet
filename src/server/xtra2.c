@@ -10602,51 +10602,65 @@ void player_death(int Ind) {
 	if (p_ptr->tmp_x) {
 		/* Tell players */
 		if (p_ptr->ghost) {
+			/* NEW: Instead of permanent death, apply XP penalty and resurrect at temple */
+			int loss_factor = INSTANT_RES_XP_LOST; /* Same as instant res penalty */
+			int reduce;
+			bool has_exp = p_ptr->max_exp != 0;
+
 			/* Tell him */
-			msg_format(Ind, "\374\377a**\377rYour ghost was destroyed by %s.\377a**", died_from_tomb);
-#if CHATTERBOX_LEVEL > 2
- #ifdef WHO_LET_THE_DOGS_OUT
-			if (strstr(p_ptr->died_from, "Farmer Maggot's dog") && magik(WHO_LET_THE_DOGS_OUT)) {
-				//msg_broadcast(0, "Suddenly a thought comes to your mind:");
-				msg_broadcast(0, "Who let the dogs out?");
-			}
- #endif
-			/* No last_words from death.txt, because we already are a ghost ie dead.. */
-#endif
+			msg_format(Ind, "\374\377a**\377rYour ghost was destroyed by %s, but you return to the temple.\377a**", died_from_tomb);
 
-#ifdef ENABLE_SUBCLASS_TITLE
-			if (p_ptr->sclass)
-				s_printf("CHARACTER_TERMINATION: GHOSTKILL race=%s ; class=%s ; trait=%s ; subclass=%s ; %d deaths\n", race_info[p_ptr->prace].title, class_info[p_ptr->pclass].title, trait_info[p_ptr->ptrait].title, class_info[p_ptr->sclass - 1].title, p_ptr->deaths);
-			else
-				s_printf("CHARACTER_TERMINATION: GHOSTKILL race=%s ; class=%s ; trait=%s ; %d deaths\n", race_info[p_ptr->prace].title, class_info[p_ptr->pclass].title, trait_info[p_ptr->ptrait].title, p_ptr->deaths);
-#else
-			s_printf("CHARACTER_TERMINATION: GHOSTKILL race=%s ; class=%s ; trait=%s ; %d deaths\n", race_info[p_ptr->prace].title, class_info[p_ptr->pclass].title, trait_info[p_ptr->ptrait].title, p_ptr->deaths);
-#endif
+			/* Log the ghost death */
+			s_printf("%s%s - %s%s's (%d%s) ghost was destroyed by %s for %d damage on %d, %d, %d. (GHOST RESURRECT)\n", FORMATDEATH, time_str, logtitlebuf, p_ptr->name, p_ptr->lev, p_ptr->admin_dm ? " DM" : (p_ptr->admin_wiz ? " DW" : ""), p_ptr->died_from, p_ptr->deathblow, p_ptr->wpos.wx, p_ptr->wpos.wy, p_ptr->wpos.wz);
 
-			if (cfg.unikill_format) {
-				switch (p_ptr->name[strlen(p_ptr->name) - 1]) {
-				case 's': case 'x': case 'z':
-					snprintf(buf, sizeof(buf), "\374\377a**\377r%s %s' (%d) ghost was destroyed by %s.\377a**", titlebuf, p_ptr->name, p_ptr->lev, died_from_msg);
-					break;
-				default:
-					snprintf(buf, sizeof(buf), "\374\377a**\377r%s %s's (%d) ghost was destroyed by %s.\377a**", titlebuf, p_ptr->name, p_ptr->lev, died_from_msg);
-				}
-			} else {
-				switch (p_ptr->name[strlen(p_ptr->name) - 1]) {
-				case 's': case 'x': case 'z':
-					snprintf(buf, sizeof(buf), "\374\377a**\377r%s' (%d) ghost was destroyed by %s.\377a**", p_ptr->name, p_ptr->lev, died_from_msg);
-					break;
-				default:
-					snprintf(buf, sizeof(buf), "\374\377a**\377r%s's (%d) ghost was destroyed by %s.\377a**", p_ptr->name, p_ptr->lev, died_from_msg);
-				}
-			}
-			s_printf("%s%s - %s%s's (%d%s) ghost was destroyed by %s for %d damage on %d, %d, %d.\n", FORMATDEATH, time_str, logtitlebuf, p_ptr->name, p_ptr->lev, p_ptr->admin_dm ? " DM" : (p_ptr->admin_wiz ? " DW" : ""), p_ptr->died_from, p_ptr->deathblow, p_ptr->wpos.wx, p_ptr->wpos.wy, p_ptr->wpos.wz);
-#ifdef RDPRINT_BASIC
-			rd_print(Ind, shortdate_str, format("%s%s (%d) was destroyed by %s.", logtitlebuf, p_ptr->name, p_ptr->lev, p_ptr->died_from), 0);
-#endif
-			if (!strcmp(p_ptr->died_from, "It") || !strcmp(p_ptr->died_from, "insanity") || p_ptr->image)
-				s_printf("(%s's ghost was really destroyed by %s.)\n", p_ptr->name, p_ptr->really_died_from);
-			death_type = DEATH_GHOST;
+			/* Apply XP penalty like instant resurrection */
+			reduce = p_ptr->max_exp;
+			reduce = reduce > 99999 ?
+			reduce / 100 * loss_factor : reduce * loss_factor / 100;
+			p_ptr->max_exp -= reduce;
+
+			reduce = p_ptr->exp;
+			reduce = reduce > 99999 ?
+			reduce / 100 * loss_factor : reduce * loss_factor / 100;
+			p_ptr->exp -= reduce;
+
+			/* Prevent cheezing exp to 0 */
+			if (!p_ptr->max_exp && has_exp) p_ptr->exp = p_ptr->max_exp = 1;
+
+			/* Remove ghost flag and return to life */
+			p_ptr->ghost = 0;
+			p_ptr->death = FALSE;
+
+			/* Full heal */
+			p_ptr->chp = p_ptr->mhp;
+			p_ptr->chp_frac = 0;
+			p_ptr->cmp = p_ptr->mmp;
+			p_ptr->cmp_frac = 0;
+
+			/* Cure status effects */
+			if (p_ptr->poisoned) (void)set_poisoned(Ind, 0, 0);
+			if (p_ptr->diseased) (void)set_diseased(Ind, 0, 0);
+			if (p_ptr->cut) (void)set_cut(Ind, -1, 0, FALSE);
+			(void)set_food(Ind, PY_FOOD_FULL - 1);
+
+			/* Teleport to temple */
+			p_ptr->recall_pos.wx = 0;
+			p_ptr->recall_pos.wy = 0;
+			p_ptr->recall_pos.wz = 0;
+			p_ptr->new_level_method = LEVEL_OUTSIDE_RAND;
+			recall_player(Ind, "\377GYou are resurrected at the temple!");
+
+			check_experience(Ind);
+
+			/* Update display */
+			p_ptr->redraw |= (PR_BASIC);
+			p_ptr->update |= (PU_BONUS);
+
+			/* Count as soft death */
+			p_ptr->soft_deaths++;
+
+			/* No permanent death, just return */
+			return;
 		} else {
 			/* Tell him */
 			msg_print(Ind, "\374\377RYou die.");
