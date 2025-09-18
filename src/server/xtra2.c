@@ -10602,65 +10602,29 @@ void player_death(int Ind) {
 	if (p_ptr->tmp_x) {
 		/* Tell players */
 		if (p_ptr->ghost) {
-			/* NEW: Instead of permanent death, apply XP penalty and resurrect at temple (everlasting only) */
+			/* Everlasting characters: no permadeath for ghosts */
 			if (p_ptr->mode & MODE_EVERLASTING) {
-				int loss_factor = INSTANT_RES_XP_LOST; /* Same as instant res penalty */
-				int reduce;
-				bool has_exp = p_ptr->max_exp != 0;
-
-			/* Tell him */
-			msg_format(Ind, "\374\377a**\377rYour ghost was destroyed by %s, but you return to the temple.\377a**", died_from_tomb);
-
-			/* Log the ghost death */
-			s_printf("%s%s - %s%s's (%d%s) ghost was destroyed by %s for %d damage on %d, %d, %d. (GHOST RESURRECT)\n", FORMATDEATH, time_str, logtitlebuf, p_ptr->name, p_ptr->lev, p_ptr->admin_dm ? " DM" : (p_ptr->admin_wiz ? " DW" : ""), p_ptr->died_from, p_ptr->deathblow, p_ptr->wpos.wx, p_ptr->wpos.wy, p_ptr->wpos.wz);
-
-			/* Apply XP penalty like instant resurrection */
-			reduce = p_ptr->max_exp;
-			reduce = reduce > 99999 ?
-			reduce / 100 * loss_factor : reduce * loss_factor / 100;
-			p_ptr->max_exp -= reduce;
-
-			reduce = p_ptr->exp;
-			reduce = reduce > 99999 ?
-			reduce / 100 * loss_factor : reduce * loss_factor / 100;
-			p_ptr->exp -= reduce;
-
-			/* Prevent cheezing exp to 0 */
-			if (!p_ptr->max_exp && has_exp) p_ptr->exp = p_ptr->max_exp = 1;
-
-			/* Remove ghost flag and return to life */
-			p_ptr->ghost = 0;
-			p_ptr->death = FALSE;
-
-			/* Full heal */
-			p_ptr->chp = p_ptr->mhp;
-			p_ptr->chp_frac = 0;
-			p_ptr->cmp = p_ptr->mmp;
-			p_ptr->cmp_frac = 0;
-
-			/* Cure status effects */
-			if (p_ptr->poisoned) (void)set_poisoned(Ind, 0, 0);
-			if (p_ptr->diseased) (void)set_diseased(Ind, 0, 0);
-			if (p_ptr->cut) (void)set_cut(Ind, -1, 0, FALSE);
-			(void)set_food(Ind, PY_FOOD_FULL - 1);
-
-			/* Teleport to temple */
-			p_ptr->recall_pos.wx = 0;
-			p_ptr->recall_pos.wy = 0;
-			p_ptr->recall_pos.wz = 0;
-			p_ptr->new_level_method = LEVEL_OUTSIDE_RAND;
-			recall_player(Ind, "\377GYou are resurrected at the temple!");
-
-			check_experience(Ind);
-
-			/* Update display */
-			p_ptr->redraw |= (PR_BASIC);
-			p_ptr->update |= (PU_BONUS);
-
-			/* Count as soft death */
-			p_ptr->soft_deaths++;
-
-				/* No permanent death, just return */
+				/* Apply XP penalty and resurrect at temple */
+				int loss_factor = INSTANT_RES_XP_LOST;
+				int reduce = p_ptr->max_exp > 99999 ? p_ptr->max_exp / 100 * loss_factor : p_ptr->max_exp * loss_factor / 100;
+				p_ptr->max_exp -= reduce;
+				reduce = p_ptr->exp > 99999 ? p_ptr->exp / 100 * loss_factor : p_ptr->exp * loss_factor / 100;
+				p_ptr->exp -= reduce;
+				if (!p_ptr->max_exp && p_ptr->exp > 0) p_ptr->exp = p_ptr->max_exp = 1;
+				
+				p_ptr->ghost = 0;
+				p_ptr->death = FALSE;
+				p_ptr->chp = p_ptr->mhp;
+				p_ptr->chp_frac = 0;
+				p_ptr->recall_pos.wx = p_ptr->recall_pos.wy = p_ptr->recall_pos.wz = 0;
+				p_ptr->new_level_method = LEVEL_OUTSIDE_RAND;
+				check_experience(Ind);
+				p_ptr->redraw |= PR_BASIC;
+				p_ptr->update |= PU_BONUS;
+				p_ptr->soft_deaths++;
+				
+				msg_format(Ind, "\374\377GYour ghost was destroyed but you return to the temple!");
+				recall_player(Ind, "");
 				return;
 			} else {
 				/* Original behavior for non-everlasting: permanent ghost death */
