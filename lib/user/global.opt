@@ -147,7 +147,7 @@ X:basic_players_symb
 Y:recall_flicker
 
 # Option 'Skip safety question when selling items'
-X:no_verify_sell
+Y:no_verify_sell
 
 # Option 'Skip safety question when destroying items'
 X:no_verify_destroy
@@ -261,7 +261,7 @@ X:view_reduce_view
 Y:easy_open
 
 # Option 'Automatically disarm traps (except under items)'
-X:easy_disarm
+Y:easy_disarm
 
 # Option 'Automatically tunnel walls'
 X:easy_tunnel
@@ -411,7 +411,7 @@ Y:item_error_beep
 X:keep_bottle
 
 # Option 'Automatically disarm monster traps ('/edmt')'
-X:easy_disarm_montraps
+Y:easy_disarm_montraps
 
 # Option 'Prevent using magic inside houses'
 X:no_house_magic
