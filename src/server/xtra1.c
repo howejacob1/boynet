@@ -1195,6 +1195,7 @@ static void calc_sanity(int Ind) {
 
 		/* If sanity just dropped to 0 or lower, die! */
 		if (p_ptr->csane < 0) {
+#ifndef DISABLE_INSANITY_DEATH
 			if (!p_ptr->safe_sane) {
 				/* Hack -- Note death */
 				msg_format(Ind, "\377v%s", HCMSG_VEGETABLE);
@@ -1228,6 +1229,10 @@ static void calc_sanity(int Ind) {
 			} else {
 				p_ptr->csane = 0;
 			}
+#else
+			/* Insanity death disabled - clamp sanity to 0 */
+			p_ptr->csane = 0;
+#endif
 		}
 
 		p_ptr->msane = msane;

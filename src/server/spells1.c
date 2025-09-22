@@ -2463,6 +2463,7 @@ void take_sanity_hit(int Ind, int damage, cptr hit_from, int Ind_attacker) {
 
 	/* Dead player */
 	if (p_ptr->csane < 0) {
+#ifndef DISABLE_INSANITY_DEATH
 		/* Hack -- Note death */
 		msg_format(Ind, "\377v%s", HCMSG_VEGETABLE);
 		/*msg_print(Ind, "\377RYou die.");
@@ -2513,6 +2514,10 @@ void take_sanity_hit(int Ind, int damage, cptr hit_from, int Ind_attacker) {
 		stop_precision(Ind);
 		stop_shooting_till_kill(Ind);
 		return;
+#else
+		/* Insanity death disabled - clamp sanity to 0 and continue */
+		p_ptr->csane = 0;
+#endif
 	}
 
 	/* Insanity warning (better message needed!) */
