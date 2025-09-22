@@ -11338,7 +11338,6 @@ void death_drop_object(player_type *p_ptr, int slot, object_type *o_ptr) {
 
 	/* If we committed suicide.. */
 	if (p_ptr->suicided) {
-#ifndef DISABLE_DEATH_ITEM_DESTRUCTION
 		/* only drop artifacts -- new 2022: but don't drop level 0 (ie untradable) artifacts (Nazgul rings littering Bree) */
 		 if (!artifact_p(o_ptr) || !o_ptr->level) {
 			/* set the artifact as unfound */
@@ -11347,7 +11346,6 @@ void death_drop_object(player_type *p_ptr, int slot, object_type *o_ptr) {
 			invwipe(o_ptr);
 			return;
 		}
-#endif
 
 		/* and if we were a total winner, don't drop any true artifacts */
 		if (true_artifact_p(o_ptr) &&
