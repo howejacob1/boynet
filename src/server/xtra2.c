@@ -10548,6 +10548,7 @@ void player_death(int Ind) {
 
 	/* Drop/lose items -------------------------------------------------- */
 
+#ifndef DISABLE_DEATH_ITEM_DESTRUCTION
 	/* Don't "lose" items on suicide (they all poof anyway, except for true arts possibly) */
 	/* Everlasting characters never lose items on death */
 #ifdef DEATH_PACK_ITEM_LOST
@@ -10569,6 +10570,7 @@ void player_death(int Ind) {
 		equip_death_damage(Ind, FALSE);
 		equip_death_damage(Ind, FALSE);
 	}
+#endif
 #endif
 
 	/* Setup the sorter */

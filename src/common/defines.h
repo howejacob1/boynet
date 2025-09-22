@@ -834,6 +834,9 @@
 /* Disable character deletion from insanity/mental illness */
 #define DISABLE_INSANITY_DEATH
 
+/* Disable item destruction on death (items still drop to floor) */
+#define DISABLE_DEATH_ITEM_DESTRUCTION
+
 /* Append XP gain to the monster's death message and trap disarm messages? */
 #define SHOW_XP_GAIN
 
