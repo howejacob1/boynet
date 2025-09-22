@@ -10550,17 +10550,18 @@ void player_death(int Ind) {
 
 	/* Don't "lose" items on suicide (they all poof anyway, except for true arts possibly) */
 	/* Everlasting characters never lose items on death */
-#if defined(DEATH_PACK_ITEM_LOST) && !defined(DISABLE_DEATH_ITEM_DESTRUCTION)
+#ifndef DISABLE_DEATH_ITEM_DESTRUCTION
+#ifdef DEATH_PACK_ITEM_LOST
 	if (!p_ptr->suicided && !(p_ptr->mode & MODE_EVERLASTING)) inven_death_damage(Ind, TRUE);
 #endif
-#if defined(DEATH_EQ_ITEM_LOST) && !defined(DISABLE_DEATH_ITEM_DESTRUCTION)
+#ifdef DEATH_EQ_ITEM_LOST
 	if (!p_ptr->suicided && !(p_ptr->mode & MODE_EVERLASTING)) equip_death_damage(Ind, TRUE);
 #endif
 	/* Soloists: Kill more items! Soloists are not really meant to interact with others much. */
-#if defined(DEATH_PACK_ITEM_LOST) && !defined(DISABLE_DEATH_ITEM_DESTRUCTION)
+#ifdef DEATH_PACK_ITEM_LOST
 	if ((p_ptr->mode & MODE_SOLO) && !p_ptr->suicided && !(p_ptr->mode & MODE_EVERLASTING)) inven_death_damage(Ind, TRUE);
 #endif
-#if defined(DEATH_EQ_ITEM_LOST) && !defined(DISABLE_DEATH_ITEM_DESTRUCTION)
+#ifdef DEATH_EQ_ITEM_LOST
 	if ((p_ptr->mode & MODE_SOLO) && !p_ptr->suicided && !(p_ptr->mode & MODE_EVERLASTING)) {
 		equip_death_damage(Ind, FALSE);
 		equip_death_damage(Ind, FALSE);
@@ -10569,6 +10570,7 @@ void player_death(int Ind) {
 		equip_death_damage(Ind, FALSE);
 		equip_death_damage(Ind, FALSE);
 	}
+#endif
 #endif
 
 	/* Setup the sorter */
