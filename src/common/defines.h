@@ -825,6 +825,9 @@
    (has no effect if KINGCAP_EXP is defined) */
 #define ALT_EXPRATIO
 
+/* Disable XP scaling based on dungeon depth vs player level */
+#define DISABLE_PLAYERS_XP_SCALING
+
 /* Append XP gain to the monster's death message and trap disarm messages? */
 #define SHOW_XP_GAIN
 
