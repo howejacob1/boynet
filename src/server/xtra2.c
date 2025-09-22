@@ -11320,13 +11320,13 @@ void death_drop_object(player_type *p_ptr, int slot, object_type *o_ptr) {
 	/* ---------- 1st: Erase the item for good? ---------- */
 
 
-#ifndef DISABLE_DEATH_ITEM_DESTRUCTION
 	if (o_ptr->questor) { /* questor items cannot be 'dropped', only destroyed! */
 		questitem_d(o_ptr, o_ptr->number);
 		invwipe(o_ptr);
 		return;
 	}
 
+#ifndef DISABLE_DEATH_ITEM_DESTRUCTION
 	/* Eat all true artifacts of Soloists */
 	if ((p_ptr->mode & MODE_SOLO) && true_artifact_p(o_ptr)) {
 		handle_art_d(o_ptr->name1);
