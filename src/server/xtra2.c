@@ -11320,6 +11320,7 @@ void death_drop_object(player_type *p_ptr, int slot, object_type *o_ptr) {
 	/* ---------- 1st: Erase the item for good? ---------- */
 
 
+#ifndef DISABLE_DEATH_ITEM_DESTRUCTION
 	if (o_ptr->questor) { /* questor items cannot be 'dropped', only destroyed! */
 		questitem_d(o_ptr, o_ptr->number);
 		invwipe(o_ptr);
@@ -11333,6 +11334,7 @@ void death_drop_object(player_type *p_ptr, int slot, object_type *o_ptr) {
 		invwipe(o_ptr);
 		return;
 	}
+#endif
 
 	/* If we committed suicide.. */
 	if (p_ptr->suicided) {
