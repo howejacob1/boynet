@@ -828,6 +828,9 @@
 /* Disable XP scaling based on dungeon depth vs player level */
 #define DISABLE_PLAYERS_XP_SCALING
 
+/* Disable instant resurrection cost requirement (still deducts available funds) */
+#define DISABLE_INSTANT_RES_COST_CHECK
+
 /* Append XP gain to the monster's death message and trap disarm messages? */
 #define SHOW_XP_GAIN
 
