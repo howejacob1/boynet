@@ -261,8 +261,8 @@ I:100:Restore Charisma
 I:100:Identify
 I:100:Identify
 # Maybe needing discussion
-#I:100:*Identify*
-I:2:*Identify*
+I:100:*Identify*
+#I:2:*Identify*
 I:100:Light
 #I:100:Restore Strength
 T:100:71:42
