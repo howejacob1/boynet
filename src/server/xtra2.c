@@ -10292,10 +10292,10 @@ void player_death(int Ind) {
 
 			/* Lose inventory and equipment items as per normal death */
  #ifdef DEATH_PACK_ITEM_LOST
-			inven_death_damage(Ind, TRUE);
+			if (!(p_ptr->mode & MODE_EVERLASTING)) inven_death_damage(Ind, TRUE);
  #endif
  #ifdef DEATH_EQ_ITEM_LOST
-			equip_death_damage(Ind, TRUE);
+			if (!(p_ptr->mode & MODE_EVERLASTING)) equip_death_damage(Ind, TRUE);
  #endif
 
 			/* Remove wielded Morgul weapon(s) if not immune to Black Breath, to avoid death-cascade.
