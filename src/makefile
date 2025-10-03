@@ -60,6 +60,8 @@
 # anything.
 #
 
+# Use all available CPU cores for parallel compilation
+MAKEFLAGS += -j$(shell nproc)
 
 #
 # The "source" and "object" files.
