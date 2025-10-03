@@ -1757,8 +1757,12 @@ void do_cmd_drop(int Ind, int item, int quantity) {
 			if (!is_admin(p_ptr)) return;
 		}
 		if (true_artifact_p(o_ptr) && cfg.anti_arts_pickup) {
+#ifdef PRESERVE_TRUE_ARTIFACTS
+			msg_print(Ind, "\377GThis true artifact will be preserved if dropped inside an inn.");
+#else
 			msg_print(Ind, "\377yYou may not drop a true artifact inside an inn.");
 			if (!is_admin(p_ptr)) return;
+#endif
 		}
 		if (k_info[o_ptr->k_idx].flags5 & TR5_WINNERS_ONLY) {
 			msg_print(Ind, "\377yYou may not drop an item inside an inn that can only be picked up by royalties.");
