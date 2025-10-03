@@ -56,8 +56,12 @@ s16b inven_takeoff(int Ind, int item, int amt, bool called_from_wield, bool forc
 		if (true_artifact_p(o2_ptr) &&
 		    ((inside_house(&p_ptr->wpos, p_ptr->px, p_ptr->py) && undepositable_artifact_p(o2_ptr) && cfg.anti_arts_house) ||
 		    (!is_admin(p_ptr) && ((cfg.anti_arts_hoard && undepositable_artifact_p(o2_ptr)) || (p_ptr->total_winner && !winner_artifact_p(o2_ptr) && cfg.kings_etiquette))))) {
+#ifdef PRESERVE_TRUE_ARTIFACTS
+			msg_print(Ind, "\374\377yYour inventory is full and a true artifact would overflow but will be preserved on the ground!");
+#else
 			msg_print(Ind, "\374\377yYour inventory is full and a true artifact would overflow and disappear here!");
 			return(-1);
+#endif
 		}
 	}
 
@@ -1775,13 +1779,21 @@ void do_cmd_drop(int Ind, int item, int quantity) {
 		    undepositable_artifact_p(o_ptr)) {
 			if (inside_house(&p_ptr->wpos, p_ptr->px, p_ptr->py)) {
 				if (cfg.anti_arts_house) {
+#ifdef PRESERVE_TRUE_ARTIFACTS
+					msg_print(Ind, "\377yThis item is a true artifact and will be preserved if dropped in a house.");
+#else
 					msg_print(Ind, "\377yThis item is a true artifact and cannot be dropped in a house!");
 					return;
+#endif
 				}
 			} else { //if (!istown(&p_ptr->wpos))
 			    //cfg.anti_arts_wild only?
+#ifdef PRESERVE_TRUE_ARTIFACTS
+				msg_print(Ind, "\377GThis true artifact will be preserved if left on the ground.");
+#else
 				msg_print(Ind, "\377RWarning! If you leave this map sector, the artifact will likely disappear!");
 				Send_warning_beep(Ind);
+#endif
 			}
 		}
 	}

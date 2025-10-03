@@ -150,7 +150,7 @@ Y:recall_flicker
 Y:no_verify_sell
 
 # Option 'Skip safety question when destroying items'
-X:no_verify_destroy
+Y:no_verify_destroy
 
 # Option 'Set 'AFK mode' automatically'
 Y:auto_afk

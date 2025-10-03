@@ -7886,11 +7886,21 @@ static void scan_objs() {
 				    + (o_ptr->marked2 == ITEM_REMOVAL_DEATH_WILD ? cfg.death_wild_item_removal : 0)
 				    + (o_ptr->marked2 == ITEM_REMOVAL_LONG_WILD ? cfg.long_wild_item_removal : 0)
 				    ) {
+#ifdef PRESERVE_TRUE_ARTIFACTS
+					/* Skip true artifacts if preservation is enabled */
+					if (true_artifact_p(o_ptr)) {
+						/* Reset the marked counter to prevent it from overflowing */
+						o_ptr->marked = 0;
+					} else {
+#endif
 					/* Artifacts and objects that were inscribed and dropped by
 					the dungeon master or by unique monsters on their death
 					stay n times as long as cfg.surface_item_removal specifies */
 					delete_object_idx(i, TRUE, TRUE);
 					dcnt++;
+#ifdef PRESERVE_TRUE_ARTIFACTS
+					}
+#endif
 				}
 			}
 
@@ -7917,8 +7927,18 @@ static void scan_objs() {
 				if (++o_ptr->marked >= ((artifact_p(o_ptr) ||
 				    (o_ptr->note && !o_ptr->owner)) ?
 				    cfg.dungeon_item_removal * 3 : cfg.dungeon_item_removal)) {
+#ifdef PRESERVE_TRUE_ARTIFACTS
+					/* Skip true artifacts if preservation is enabled */
+					if (true_artifact_p(o_ptr)) {
+						/* Reset the marked counter to prevent it from overflowing */
+						o_ptr->marked = 0;
+					} else {
+#endif
 					delete_object_idx(i, TRUE, TRUE);
 					dcnt++;
+#ifdef PRESERVE_TRUE_ARTIFACTS
+					}
+#endif
 				}
 			}
 
@@ -8905,6 +8925,16 @@ static void process_artifacts(void) {
 	player_type *p_ptr;
 
 	if (!cfg.persistent_artifacts && i < max_a_idx && a_info[i].timeout > 0) {
+#ifdef PRESERVE_TRUE_ARTIFACTS
+		/* Skip true artifacts if preservation is enabled */
+		object_type forge;
+		int k_idx = lookup_kind(a_info[i].tval, a_info[i].sval);
+		if (k_idx) {
+			invcopy(&forge, k_idx);
+			forge.name1 = i;
+			if (true_artifact_p(&forge)) return;
+		}
+#endif
  #if defined(IDDC_ARTIFACT_FAST_TIMEOUT) || defined(WINNER_ARTIFACT_FAST_TIMEOUT)
 		bool double_speed = FALSE;
  #endif

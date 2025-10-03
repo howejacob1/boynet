@@ -15299,8 +15299,12 @@ void telekinesis_aux(int Ind, int item) {
 
 	/* You cannot send artifact */
 	if ((cfg.anti_arts_hoard || p_ptr->total_winner) && true_artifact_p(q_ptr) && !is_admin(p_ptr)) {
+#ifdef PRESERVE_TRUE_ARTIFACTS
+		msg_print(Ind, "This true artifact will be preserved if sent by telekinesis.");
+#else
 		msg_print(Ind, "You have an acute feeling of loss!");
 		handle_art_d(q_ptr->name1);
+#endif
 	} else {
 		char o_name[ONAME_LEN];
 

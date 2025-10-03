@@ -1055,12 +1055,16 @@
 
 /* Do artifacts time out after a while to prevent hoarding?
    (Fluent artifact reset system vs static reset schedules) - C. Blue */
-#define FLUENT_ARTIFACT_RESETS
+#undef FLUENT_ARTIFACT_RESETS
 /* Warn a player if an artifact is about to timeout [4 hours] */
 #define FLUENT_ARTIFACT_WARNING (60 * 4)
 /* Default time in weeks until a true artifact times out.
    Gets doubled for winner-arts and doubled on rpg-server (cumulative). */
 #define FLUENT_ARTIFACT_WEEKS 5
+
+/* Preserve true artifacts from timing out and from ground/inn removal?
+   When enabled, true artifacts will never be removed except on death. */
+#define PRESERVE_TRUE_ARTIFACTS
 
 #ifdef FLUENT_ARTIFACT_RESETS
  /* The One Ring/Bladeturner don't get their timeout duration halved when their wearer wins */
