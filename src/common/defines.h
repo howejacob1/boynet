@@ -1066,6 +1066,10 @@
    When enabled, true artifacts will never be removed except on death. */
 #define PRESERVE_TRUE_ARTIFACTS
 
+/* Disable life force draining from equipment with TR3_DRAIN_EXP flag?
+   When enabled, items with experience draining will not drain EXP and won't show drain messages. */
+#define DISABLE_EXP_DRAINING
+
 #ifdef FLUENT_ARTIFACT_RESETS
  /* The One Ring/Bladeturner don't get their timeout duration halved when their wearer wins */
  #define L100_ARTS_LAST

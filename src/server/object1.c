@@ -6403,7 +6403,9 @@ bool identify_combo_aux(int Ind, object_type *o_ptr, bool full, int slot, int In
 			fprintf(fff, "\377DIt drains health, but as a true vampire you are unaffected.\n");
 		else fprintf(fff, "\377DIt drains your health.\n");
 	}
+#ifndef DISABLE_EXP_DRAINING
 	if (f3 & TR3_DRAIN_EXP) fprintf(fff, "\377DIt drains your life force.\n");
+#endif
 	if (f3 & TR3_AGGRAVATE) fprintf(fff, "\377DIt aggravates nearby creatures.\n");
 	if (f4 & TR4_NEVER_BLOW) fprintf(fff, "\377DIt can't attack.\n");
 	if (f4 & TR4_BLACK_BREATH) fprintf(fff, "\377DIt fills you with the Black Breath.\n");

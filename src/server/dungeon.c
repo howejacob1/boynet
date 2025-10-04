@@ -6520,6 +6520,7 @@ static bool process_player_end_aux(int Ind) {
 	//if (p_ptr->drain_exp && magik(p_ptr->wpos.wz != 0 ? 50 : 0) && magik(30 - (60 / (p_ptr->drain_exp + 2))))
 	//if (p_ptr->drain_exp && magik(p_ptr->wpos.wz != 0 ? 50 : (town ? 0 : 25)) && magik(30 - (60 / (p_ptr->drain_exp + 2))))
 	/* changing above line to use istownarea() so you can sort your houses without drain */
+#ifndef DISABLE_EXP_DRAINING
 	if (p_ptr->drain_exp
 	    && magik((p_ptr->wpos.wz != 0 ? (dungeontown ? 0 : 50) :
 	     (townarea ? 0 : 25)) / (p_ptr->prace == RACE_VAMPIRE ? 2 : 1))
@@ -6548,6 +6549,7 @@ static bool process_player_end_aux(int Ind) {
 		/* Drain it! */
 		if (exploss > 0) take_xp_hit(Ind, exploss, "Draining", TRUE, FALSE, FALSE, 0);
 	}
+#endif
 
 #if 0
 	{

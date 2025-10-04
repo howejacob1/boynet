@@ -1757,9 +1757,7 @@ void do_cmd_drop(int Ind, int item, int quantity) {
 			if (!is_admin(p_ptr)) return;
 		}
 		if (true_artifact_p(o_ptr) && cfg.anti_arts_pickup) {
-#ifdef PRESERVE_TRUE_ARTIFACTS
-			msg_print(Ind, "\377GThis true artifact will be preserved if dropped inside an inn.");
-#else
+#ifndef PRESERVE_TRUE_ARTIFACTS
 			msg_print(Ind, "\377yYou may not drop a true artifact inside an inn.");
 			if (!is_admin(p_ptr)) return;
 #endif
@@ -2532,7 +2530,9 @@ void power_inscribe(object_type *o_ptr, bool redux, char *powins) {
 	if (f3 & (TR3_NO_TELE)) strcat(powins, "NT");
 	if (f5 & (TR5_DRAIN_HP)) strcat(powins, "Dr");
 	if (f5 & (TR5_DRAIN_MANA)) strcat(powins, "Drm");
+#ifndef DISABLE_EXP_DRAINING
 	if (f3 & (TR3_DRAIN_EXP)) strcat(powins, "Drx");
+#endif
 	if (f3 & (TR3_AGGRAVATE)) strcat(powins, "Aggr");
 
 	/* covers both, tmp+esp and strange books.. */

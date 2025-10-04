@@ -4493,7 +4493,9 @@ void calc_boni(int Ind) {
 			}
 #endif
 		}
+#ifndef DISABLE_EXP_DRAINING
 		if (f3 & TR3_DRAIN_EXP) p_ptr->drain_exp++;
+#endif
 		if (f5 & (TR5_DRAIN_MANA)) { p_ptr->drain_mana++; csheet_boni[i-INVEN_WIELD].cb[5] |= CB6_SRGMP; }
 		if (f5 & (TR5_DRAIN_HP)) {
 			/* Spectral weapons don't hurt true vampires -
