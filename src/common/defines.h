@@ -1070,6 +1070,10 @@
    When enabled, items with experience draining will not drain EXP and won't show drain messages. */
 #define DISABLE_EXP_DRAINING
 
+/* Disable the anti-littering restriction for level 0 items in towns?
+   When enabled, players can drop level 0 items in towns without the "don't litter" message. */
+#define DISABLE_TOWN_LITTERING_RESTRICTION
+
 #ifdef FLUENT_ARTIFACT_RESETS
  /* The One Ring/Bladeturner don't get their timeout duration halved when their wearer wins */
  #define L100_ARTS_LAST

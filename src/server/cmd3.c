@@ -1729,6 +1729,7 @@ void do_cmd_drop(int Ind, int item, int quantity) {
 #endif
 
 	/* Stop littering towns */
+#ifndef DISABLE_TOWN_LITTERING_RESTRICTION
 	if (o_ptr->level == 0 &&
 	    //o_ptr->owner == p_ptr->id &&
 	    istown(&p_ptr->wpos) &&
@@ -1741,6 +1742,7 @@ void do_cmd_drop(int Ind, int item, int quantity) {
 			msg_print(Ind, "\377y by other players. Use '\377ok\377y' to destroy an item instead.");
 		if (!is_admin(p_ptr)) return;
 	}
+#endif
 	/* Stop littering inns */
 	if (zcave && inside_inn(p_ptr, &zcave[p_ptr->py][p_ptr->px])) {
 		/* No nothingness / curse-no-drop + heavy-curse stuff */
