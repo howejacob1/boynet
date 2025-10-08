@@ -5216,9 +5216,14 @@ void do_cmd_store(int Ind) {
 	p_ptr->tim_store = STORE_TURNOUT;
 
 	/* Calculate the number of store maintainances since the last visit */
+#ifdef STORES_REFRESH_EVERY_TURN
+	/* Refresh every single turn for instant restocking */
+	maintain_num = (turn - st_ptr->last_visit);
+#else
 	maintain_num = (turn - st_ptr->last_visit) / (10L *
 	    (((is_bookstore(st_ptr->st_idx) ? cfg.book_store_turns_perc : 100)
 	    * (p_ptr->wpos.wz ? cfg.dun_store_turns : cfg.store_turns) + 99) / 100));
+#endif
 
 	/* Maintain the store max. 10 times.
 	   Note: this value could probably be reduced down to 4, with
@@ -7862,7 +7867,12 @@ void store_debug_stock() {
 		}
 #endif
 		/* Calculate the number of store maintainances since the last visit */
+#ifdef STORES_REFRESH_EVERY_TURN
+		/* Refresh every single turn for instant restocking */
+		maintain_num = (turn - st_ptr->last_visit);
+#else
 		maintain_num = (turn - st_ptr->last_visit) / ((10L * cfg.store_turns) / store_debug_quickmotion);
+#endif
 
 		/* Maintain the store max. 10 times */
 		if (maintain_num > MAX_MAINTENANCES) maintain_num = MAX_MAINTENANCES;

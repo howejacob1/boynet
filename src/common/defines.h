@@ -1074,6 +1074,10 @@
    When enabled, players can drop level 0 items in towns without the "don't litter" message. */
 #define DISABLE_TOWN_LITTERING_RESTRICTION
 
+/* Make stores refresh their inventory every turn instead of every cfg.store_turns?
+   When enabled, stores will restock every single turn for instant refresh. */
+#define STORES_REFRESH_EVERY_TURN
+
 #ifdef FLUENT_ARTIFACT_RESETS
  /* The One Ring/Bladeturner don't get their timeout duration halved when their wearer wins */
  #define L100_ARTS_LAST
