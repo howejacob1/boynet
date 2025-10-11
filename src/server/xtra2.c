@@ -10044,8 +10044,11 @@ void player_death(int Ind) {
 			if (!ge_secure) { /* ..if we weren't in a special event that protects */
 #ifndef ARCADE_SERVER
 				p_ptr->au = p_ptr->au * 4 / 5;
-				p_ptr->max_exp = (p_ptr->max_exp * 4 + 1) / 5; /* never drop below 1! (Highlander Tournament exploit) */
-				p_ptr->exp = p_ptr->max_exp;
+				/* No experience loss for everlasting characters */
+				if (!(p_ptr->mode & MODE_EVERLASTING)) {
+					p_ptr->max_exp = (p_ptr->max_exp * 4 + 1) / 5; /* never drop below 1! (Highlander Tournament exploit) */
+					p_ptr->exp = p_ptr->max_exp;
+				}
 #endif
 #if 0
 			} else {
@@ -10360,25 +10363,28 @@ void player_death(int Ind) {
 			p_ptr->safe_sane = TRUE;
 
 			/* Lose some experience */
-			loss_factor = INSTANT_RES_XP_LOST;
-			if (get_skill(p_ptr, SKILL_HCURING) >= 50
- #ifdef ENABLE_OCCULT /* Occult */
-			    || get_skill(p_ptr, SKILL_OSPIRIT) >= 50
- #endif
-			    ) loss_factor -= 5;
+			/* No experience loss for everlasting characters */
+			if (!(p_ptr->mode & MODE_EVERLASTING)) {
+				loss_factor = INSTANT_RES_XP_LOST;
+				if (get_skill(p_ptr, SKILL_HCURING) >= 50
+#ifdef ENABLE_OCCULT /* Occult */
+				    || get_skill(p_ptr, SKILL_OSPIRIT) >= 50
+#endif
+				    ) loss_factor -= 5;
 
-			reduce = p_ptr->max_exp;
-			reduce = reduce > 99999 ?
-			reduce / 100 * loss_factor : reduce * loss_factor / 100;
-			p_ptr->max_exp -= reduce;
+				reduce = p_ptr->max_exp;
+				reduce = reduce > 99999 ?
+				reduce / 100 * loss_factor : reduce * loss_factor / 100;
+				p_ptr->max_exp -= reduce;
 
-			reduce = p_ptr->exp;
-			reduce = reduce > 99999 ?
-			reduce / 100 * loss_factor : reduce * loss_factor / 100;
-			p_ptr->exp -= reduce;
+				reduce = p_ptr->exp;
+				reduce = reduce > 99999 ?
+				reduce / 100 * loss_factor : reduce * loss_factor / 100;
+				p_ptr->exp -= reduce;
 
-			/* Prevent cheezing exp to 0 to become eligible for certain events */
-			if (!p_ptr->max_exp && has_exp) p_ptr->exp = p_ptr->max_exp = 1;
+				/* Prevent cheezing exp to 0 to become eligible for certain events */
+				if (!p_ptr->max_exp && has_exp) p_ptr->exp = p_ptr->max_exp = 1;
+			}
 
 			check_experience(Ind);
 
@@ -10609,13 +10615,7 @@ void player_death(int Ind) {
 		if (p_ptr->ghost) {
 			/* Everlasting characters: no permadeath for ghosts */
 			if (p_ptr->mode & MODE_EVERLASTING) {
-				/* Apply XP penalty and resurrect at temple */
-				int loss_factor = INSTANT_RES_XP_LOST;
-				int reduce = p_ptr->max_exp > 99999 ? p_ptr->max_exp / 100 * loss_factor : p_ptr->max_exp * loss_factor / 100;
-				p_ptr->max_exp -= reduce;
-				reduce = p_ptr->exp > 99999 ? p_ptr->exp / 100 * loss_factor : p_ptr->exp * loss_factor / 100;
-				p_ptr->exp -= reduce;
-				if (!p_ptr->max_exp && p_ptr->exp > 0) p_ptr->exp = p_ptr->max_exp = 1;
+				/* No experience loss for everlasting characters - just resurrect at temple */
 				
 				p_ptr->ghost = 0;
 				p_ptr->death = FALSE;
