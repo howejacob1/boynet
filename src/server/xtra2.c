@@ -85,7 +85,8 @@
 #define RANDOMIZED_LOOT_LEVEL
 
 /* Level 50 limit for non-kings:    RECOMMENDED!  */
-#define KINGCAP_LEV
+// disabled because nope
+/* #define KINGCAP_LEV */
 
 /* exp limit for non-kings (level 50..69 depending on race/class) for non-kings: */
 /*#define KINGCAP_EXP*/		/*  NOT RECOMMENDED to enable this!  */
