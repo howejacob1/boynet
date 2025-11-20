@@ -389,12 +389,9 @@ C:0:0:0
 I:73:0:s:0
 
 #RESET_SKILL
-N:80:Lose memories I
+N:80:Lose Memories
 C:0:0:0
 I:74:0:l:0
-N:81:Lose memories II
-C:0:0:0
-I:75:0:L:0
 
 N:82:Contact house owner
 C:0:0:0

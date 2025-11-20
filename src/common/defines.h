@@ -9497,8 +9497,7 @@ extern int PlayerUID;
  #undef RESET_SKILL_DISABLE_SOME_SKILLS
  #undef RESET_SKILL_ONLY_ONCE
  #undef RESET_SKILL_ONLY_ONE_LEVEL
- #define BACT_LOSE_MEMORIES_I		74
- #define BACT_LOSE_MEMORIES_II		75
+ #define BACT_LOSE_MEMORIES		74
 #endif
 #define BACT_CONTACT_OWNER		76
 /* If one adds new BACT_ do NOT forget to increase max_bact in variables.c */
@@ -9931,10 +9930,8 @@ extern int PlayerUID;
 #define RID_REPAIR_ARMOUR	16
 #define RID_REPAIR_WEAPON	17
 #ifdef RESET_SKILL
- #define RID_LOSE_MEMORIES_I	18
- #define RID_LOSE_MEMORIES_II	19
- #define RID_LOSE_MEMORIES_I_SKILL	20
- #define RID_LOSE_MEMORIES_II_SKILL	21
+ #define RID_LOSE_MEMORIES	18
+ #define RID_LOSE_MEMORIES_SKILL	19
 #endif
 #define RID_CONTACT_OWNER	22
 #define RID_SPIN_WHEEL		23	//casino

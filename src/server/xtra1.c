@@ -11435,8 +11435,7 @@ void handle_request_return_str(int Ind, int id, char *str) {
 #endif
 
 #ifdef RESET_SKILL
-	case RID_LOSE_MEMORIES_I_SKILL:
-	case RID_LOSE_MEMORIES_II_SKILL:
+	case RID_LOSE_MEMORIES_SKILL:
 	{
 		int i;
 
@@ -11447,21 +11446,10 @@ void handle_request_return_str(int Ind, int id, char *str) {
 			return;
 		}
 
-		s_printf("RESET_SKILL: %s (%s): %s (%d).\n", p_ptr->name, id == RID_LOSE_MEMORIES_I_SKILL ? "I" : "II", s_name + s_info[i].name, i);
-		if (id == RID_LOSE_MEMORIES_I_SKILL) {
-			Send_request_cfr(Ind, RID_LOSE_MEMORIES_I, "Are you sure you want to reset this skill? ", 0);
-			p_ptr->request_extra = i;
-			return;
-		} else {
-			if (p_ptr->au < RESET_SKILL_FEE) {
-				msg_format(Ind, "\377yYou need to carry %d Au to donate them for this advanced spell!", RESET_SKILL_FEE);
-				return;
-			}
-			Send_request_cfr(Ind, RID_LOSE_MEMORIES_II, format("Are you sure you want to pay %d Au? ", RESET_SKILL_FEE), 0);
-			p_ptr->request_extra = i;
-			return;
-		}
-		break;
+		s_printf("RESET_SKILL: %s: %s (%d).\n", p_ptr->name, s_name + s_info[i].name, i);
+		Send_request_cfr(Ind, RID_LOSE_MEMORIES, "Are you sure you want to reset this skill? ", 0);
+		p_ptr->request_extra = i;
+		return;
 	}
 #endif
 
@@ -12114,8 +12102,7 @@ void handle_request_return_cfr(int Ind, int id, bool cfr) {
 		return;
 
 #ifdef RESET_SKILL
-	case RID_LOSE_MEMORIES_I:
-	case RID_LOSE_MEMORIES_II:
+	case RID_LOSE_MEMORIES:
 		if (!cfr) return;
 
 		i = p_ptr->request_extra;
@@ -12161,28 +12148,12 @@ void handle_request_return_cfr(int Ind, int id, bool cfr) {
 			break;
 		}
 #endif
-		if (id == RID_LOSE_MEMORIES_II) {
-			if (p_ptr->au < RESET_SKILL_FEE) {
-				msg_format(Ind, "\377yYou need to carry %d Au to donate them for this advanced spell!", RESET_SKILL_FEE);
-				return;
-			}
-			/* Success */
-			p_ptr->au -= RESET_SKILL_FEE;
-			p_ptr->redraw |= PR_GOLD;
- #ifdef USE_SOUND_2010
-			sound(Ind, "pickup_gold", NULL, SFX_TYPE_COMMAND, FALSE);
-			sound(Ind, "levelup", NULL, SFX_TYPE_MISC, FALSE);
- #endif
-
-			msg_print(Ind, "The spell chirurgically wipes your memories while keeping your brain flexible..");
-		} else {
-			/* Lose Memories I - free version, no level loss */
- #ifdef USE_SOUND_2010
-			sound(Ind, "levelup", NULL, SFX_TYPE_MISC, FALSE);
- #endif
-			msg_print(Ind, "The spell roughly wipes your memories while keeping your brain flexible..");
-		}
-		s_printf("RESET_SKILL(done): %s (%s): %s (%d).\n", p_ptr->name, id == RID_LOSE_MEMORIES_I ? "I" : "II", s_name + s_info[i].name, i);
+		/* Success - free skill reset */
+#ifdef USE_SOUND_2010
+		sound(Ind, "levelup", NULL, SFX_TYPE_MISC, FALSE);
+#endif
+		msg_print(Ind, "The spell wipes your memories while keeping your brain flexible..");
+		s_printf("RESET_SKILL(done): %s: %s (%d).\n", p_ptr->name, s_name + s_info[i].name, i);
 		respec_skill(Ind, i, FALSE, FALSE);
 		msg_format(Ind, " You have lost all your knowledge of your '%s' skill!", s_name + s_info[i].name);
 #ifdef RESET_SKILL_ONLY_ONCE
