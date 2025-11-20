@@ -317,9 +317,6 @@
 #define SOLO_REKING 5000000
 
 #define RESET_SKILL
-#ifdef RESET_SKILL
- #define RESET_SKILL_FEE	250000
-#endif
 
 /* Do vampires not suffer Black Breath at all? */
 #define VAMPIRES_BB_IMMUNE
