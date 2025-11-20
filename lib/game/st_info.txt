@@ -562,7 +562,7 @@ O:25:25:25:25:25:25
 G:+:U
 W:119
 
-N:23:The Mirror
+N:23:The Mirror of Ugliness
 #A:0:0:44:15:16:43
 #SOLO_REKING-> (switched some to Seat of Ruling)
 A:44:43:71:0:80:81
@@ -573,7 +573,7 @@ W:0
 N:24:Seat of Ruling
 #A:0:0:17:35:0:0
 #A:0:0:16:35:0:0
-#SOLO_REKING-> (received some from The Mirror)
+#SOLO_REKING-> (received some from The Mirror of Ugliness)
 A:0:0:35:0:16:15
 O:52:52:52:52:52:52
 G:+:U

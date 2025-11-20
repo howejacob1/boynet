@@ -116,16 +116,109 @@ make clean             # Clean build artifacts
 - Account data stored in `tomenet.acc`
 
 ## Network Architecture
-- UDP-based with reliability layer
-- Client-server model
-- Connection state management in nserver.c
-- Packet-based communication protocol
+
+### Server (`src/server/nserver.c`)
+- **Protocol**: UDP-based with custom reliability layer piggybacked on unreliable packets
+- **Connection States**:
+  1. Initial socket setup
+  2. Client authentication (name/params)
+  3. Server config transmission
+  4. Ready-but-not-playing state
+  5. Output drain states (ACK waiting)
+  6. Actively playing
+- **Reliability**: Client ACKs byte position in reliable stream, server retransmits on timeout
+- **RTT Tracking**: Adaptive retransmit timeout based on round-trip time measurements
+- **Key Functions**: `Net_input()`, `Net_output()`, `Send_reliable()`, `Receive_ack()`
+
+### Client (`src/client/nclient.c`)
+- Packet dispatch via `receive_tbl[]` lookup table
+- Socket buffer with rollback support for incomplete packets
+- Handles map updates, messages, player stats, etc.
+
+### Game Loop Integration
+- Server: `dungeon()` calls `Net_input()` at start, `Net_output()` at end
+- Client: Main loop polls `Net_input()` via `SocketReadable()`
+- Keepalive packets maintain UDP routing table priority
 
 ## Lua Integration
-- Embedded Lua interpreter
-- tolua bindings for C<->Lua interface
-- Script files in `lib/scpt/`
-- Preprocessor support for conditional compilation
-- Main script functions: `exec_lua()`, `pern_dofile()`
+
+### Initialization (`src/server/script.c`)
+- **Lua State**: Single global `L` for all server scripts
+- **Libraries**: Base, math, string, io, debug + custom bitlib
+- **APIs**: tolua-generated bindings (util, player, spells, z_pack)
+- **Startup**: `init_lua()` loads `init.lua`, then initializes schools/spells from Lua
+
+### Execution Model
+- `pern_dofile(Ind, "file.lua")` - Load and execute Lua file
+- `exec_lua(Ind, "code")` - Execute string, return numeric result
+- `string_exec_lua(Ind, "code")` - Execute string, return string result
+- `Ind` parameter: Player index (0 = server context, 1+ = specific player)
+- Sets `Ind` and `player` globals before each execution
+
+### Hooks & Callbacks
+- `second_handler()` - Called every server second (from `dungeon()` loop)
+- Spell casting: Lua defines spell effects, C code invokes them
+- Quest triggers: Lua scripts handle quest logic
+- Custom events: Lua can be invoked from C at any point
+
+### Lua Files (`lib/scpt/`)
+- **Core**: `init.lua`, `module.lua`, `xml.lua`
+- **Spells**: `s_*.lua` (fire, water, air, earth, mind, nature, etc.)
+- **Prayers**: `p_*.lua` (offense, defense, support, curing)
+- **Occult**: `o_*.lua` (shadow, spirit, hereticism, unlife)
+- **Character**: `classes.lua`, `races.lua`, `traits.lua`
+- **Systems**: `spells.lua`, `powers.lua`, `quests.lua`, `player.lua`
+
+## Data File Format
+
+### Common Structure
+All `*_info.txt` files use line-prefix format:
+- `V:` - Version stamp (required first line)
+- `N:idx:name` - Name/index (idx often ignored, auto-numbered)
+- `I:` - Info (stats vary by file type)
+- `W:` - Weight/depth/rarity
+- `F:` - Flags (pipe-separated: `FLAG1 | FLAG2`)
+- `D:` - Description text (can span multiple lines)
+
+### Parsing (`src/server/init2.c`)
+1. Allocate header + info array in memory
+2. Parse line-by-line with state machine
+3. Optionally cache as binary `.raw` file in `lib/data/`
+4. Check modification time to decide whether to re-parse
+
+### Major Files
+- `r_info.txt` (20K+ lines) - Monster races: HP, AC, attacks, spells, AI flags
+- `k_info.txt` (8K+ lines) - Object kinds: tval/sval, weight, damage, flags
+- `a_info.txt` - Artifacts: Unique items with special powers
+- `e_info.txt` - Ego items: Item modifiers (of Slaying, of Resist, etc.)
+- `d_info.txt` - Dungeons: Depth ranges, monster/object tables
+- `f_info.txt` - Features: Terrain types (walls, floors, doors)
+- `t_*.txt` - Town layouts: ASCII maps with feature codes
+
+## Quick Index
+
+### Find specific functionality:
+- **Player commands**: `src/server/cmd*.c` (cmd1.c = movement, cmd2.c = items, etc.)
+- **Combat**: `src/server/melee*.c`, `attack.c`
+- **Spells**: `src/server/spells*.c`
+- **Monsters**: `src/server/monster*.c`, `mon-ai.c`
+- **Generation**: `src/server/generate.c`, `wild.c`
+- **Network**: `src/server/nserver.c`, `src/client/nclient.c`
+- **UI**: `src/client/z-term.c`, `main-*.c`
+- **Game loop**: `src/server/dungeon.c` (line 10343)
+- **Client loop**: `src/client/c-init.c` (line 3133)
+
+### Important globals:
+- `Players[]` - Player array (1-indexed! 0 = server context)
+- `NumPlayers` - Current connected players
+- `turn` - Game turn counter (s32b)
+- `m_list[]`, `o_list[]` - Monster/object arrays
+- `r_info[]`, `k_info[]`, `a_info[]` - Parsed data tables
+- `L` - Lua state
+- `cfg` - Server config structure
+
+## Additional Resources
+
+For a comprehensive index with detailed system explanations, see `.cursor_index.md`.
 
 This reference should be updated as new information about the codebase structure and development practices is discovered.

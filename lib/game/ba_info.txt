@@ -223,12 +223,12 @@ N:42:Morph restoration
 C:12000:10000:8000
 I:37:0:r:0
 
-#for The Mirror
+#for The Mirror of Ugliness
 N:43:View fate
 C:500:500:500
 I:42:0:v:0
 
-#for The Mirror
+#for The Mirror of Ugliness
 N:44:Research item
 C:3500:3500:3500
 I:1:0:a:10

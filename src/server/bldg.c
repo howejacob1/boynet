@@ -3027,15 +3027,19 @@ bool bldg_process_command(int Ind, store_type *st_ptr, int action, int item, int
 		if (p_ptr->mode & MODE_PVP) {
 			msg_print(Ind, "\377yThis spell does not work on PVP-mode characters.");
 			break;
-		}
+                }
+#ifdef RESET_SKILL_ONLY_ONCE                
 		if (p_ptr->reskill_possible & RESKILL_F_RESET) {
 			msg_print(Ind, "\377yThis spell will never work twice on the same brain.");
 			break;
 		}
+#endif
+#ifdef RESET_SKILL_ONLY_ONE_LEVEL                
 		if (p_ptr->max_plv != RESET_SKILL) {
 			msg_format(Ind, "\377yThis spell only works on minds that have freshly attained level %d.", RESET_SKILL);
 			break;
-		}
+                }
+#endif                
 		if (bact == BACT_LOSE_MEMORIES_I)
 			Send_request_str(Ind, RID_LOSE_MEMORIES_I_SKILL, "Which skill do you wish to reset? ", "");
 		else {

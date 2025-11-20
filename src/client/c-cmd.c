@@ -2526,7 +2526,7 @@ void cmd_the_guide(byte init_search_type, int init_lineno, char* init_search_str
 			init_search_type = 2;
 			strcpy(init_search_string, "/GUILD_CFG");
 		}
-		/* Undo/reset -> /undoskills (which also mentions the new experimental way in The Mirror) */
+		/* Undo/reset -> /undoskills (which also mentions the new experimental way in The Mirror of Ugliness) */
 		else if (((my_strcasestr(buf, "undo") || my_strcasestr(buf, "reset")) && (my_strcasestr(buf, "skil") || my_strcasestr(buf, "spec"))) ||
 		    !strcasecmp("undo", buf) || !strcasecmp("reset", buf) || !strcasecmp(buf, "respec") || !strcasecmp(buf, "respecc") || !strcasecmp(buf, "reskill") || !strcasecmp(buf, "reskil")) {
 			init_search_type = 2;
