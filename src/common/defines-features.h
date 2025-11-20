@@ -316,11 +316,9 @@
    so twice this has to be 'paid' in total. */
 #define SOLO_REKING 5000000
 
-/* Allow a one-time reset of one skill at character level <RESET_SKILL>? ([35], No-define to disable) */
-#define RESET_SKILL 35
+#define RESET_SKILL
 #ifdef RESET_SKILL
- #define RESET_SKILL_LEVELS	5
- #define RESET_SKILL_FEE	1500000
+ #define RESET_SKILL_FEE	250000
 #endif
 
 /* Do vampires not suffer Black Breath at all? */

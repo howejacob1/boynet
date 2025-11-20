@@ -11449,7 +11449,7 @@ void handle_request_return_str(int Ind, int id, char *str) {
 
 		s_printf("RESET_SKILL: %s (%s): %s (%d).\n", p_ptr->name, id == RID_LOSE_MEMORIES_I_SKILL ? "I" : "II", s_name + s_info[i].name, i);
 		if (id == RID_LOSE_MEMORIES_I_SKILL) {
-			Send_request_cfr(Ind, RID_LOSE_MEMORIES_I, format("Are you sure you want to lose %d character levels? ", RESET_SKILL_LEVELS), 0);
+			Send_request_cfr(Ind, RID_LOSE_MEMORIES_I, "Are you sure you want to reset this skill? ", 0);
 			p_ptr->request_extra = i;
 			return;
 		} else {
@@ -12149,14 +12149,18 @@ void handle_request_return_cfr(int Ind, int id, bool cfr) {
 			msg_print(Ind, "\377yThis spell does not work on PVP-mode characters.");
 			break;
 		}
+#ifdef RESET_SKILL_ONLY_ONCE
 		if (p_ptr->reskill_possible & RESKILL_F_RESET) {
 			msg_print(Ind, "\377yThis spell will never work twice on the same brain.");
 			break;
 		}
+#endif
+#ifdef RESET_SKILL_ONLY_ONE_LEVEL
 		if (p_ptr->max_plv != RESET_SKILL) {
 			msg_format(Ind, "\377yThis spell only works on minds that have freshly attained level %d.", RESET_SKILL);
 			break;
 		}
+#endif
 		if (id == RID_LOSE_MEMORIES_II) {
 			if (p_ptr->au < RESET_SKILL_FEE) {
 				msg_format(Ind, "\377yYou need to carry %d Au to donate them for this advanced spell!", RESET_SKILL_FEE);
@@ -12172,27 +12176,7 @@ void handle_request_return_cfr(int Ind, int id, bool cfr) {
 
 			msg_print(Ind, "The spell chirurgically wipes your memories while keeping your brain flexible..");
 		} else {
-			/* Success */
-			p_ptr->max_lev -= 5;
-			p_ptr->lev -= 5;
-			p_ptr->exp = lua_player_exp(p_ptr->lev, p_ptr->expfact);
-			p_ptr->max_exp = p_ptr->exp;
-
-			clockin(Ind, 1); /* Set player level */
-
-			p_ptr->update |= (PU_BONUS | PU_HP | PU_MANA | PU_SANITY);
-
-			/* Redraw some stuff */
-			p_ptr->redraw |= (PR_LEV | PR_TITLE | PR_DEPTH | PR_STATE);
-			/* PR_STATE is only needed if player can unlearn
-			    techniques by dropping in levels */
-
-			/* Window stuff */
-			p_ptr->window |= (PW_PLAYER);
-
-			/* Window stuff - Items might be come (un)usable depending on level! */
-			p_ptr->window |= (PW_INVEN | PW_EQUIP);
-
+			/* Lose Memories I - free version, no level loss */
  #ifdef USE_SOUND_2010
 			sound(Ind, "levelup", NULL, SFX_TYPE_MISC, FALSE);
  #endif
@@ -12201,7 +12185,9 @@ void handle_request_return_cfr(int Ind, int id, bool cfr) {
 		s_printf("RESET_SKILL(done): %s (%s): %s (%d).\n", p_ptr->name, id == RID_LOSE_MEMORIES_I ? "I" : "II", s_name + s_info[i].name, i);
 		respec_skill(Ind, i, FALSE, FALSE);
 		msg_format(Ind, " You have lost all your knowledge of your '%s' skill!", s_name + s_info[i].name);
+#ifdef RESET_SKILL_ONLY_ONCE
 		p_ptr->reskill_possible |= RESKILL_F_RESET; /* Permanent flag: Only once per character */
+#endif
 		return;
 #endif
 
