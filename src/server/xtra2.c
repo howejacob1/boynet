@@ -5611,8 +5611,8 @@ void check_experience(int Ind) {
 #endif
 
 #ifdef RESET_SKILL
-	/* Hint about skill reset feature at level 20 */
-	if (old_lev < 20 && p_ptr->lev == 20 && p_ptr->newbie_hints) {
+	/* Hint about skill reset feature */
+	if (old_lev < RESET_SKILL_HINT_LEVEL && p_ptr->lev == RESET_SKILL_HINT_LEVEL && p_ptr->newbie_hints) {
 		msg_print(Ind, "\374\377GYou may utilize the grand 'Lose Memories' spell of 'The Mirror of Ugliness' in Lothlorien");
 		msg_print(Ind, "\374\377G to reset one skill of your choice -with a few exceptions- if you wish!");
 		msg_print(Ind, "\374\377G (See '/? lose mem' for more information.)");

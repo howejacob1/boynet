@@ -9498,6 +9498,7 @@ extern int PlayerUID;
  #undef RESET_SKILL_ONLY_ONCE
  #undef RESET_SKILL_ONLY_ONE_LEVEL
  #define BACT_LOSE_MEMORIES		74
+ #define RESET_SKILL_HINT_LEVEL		20	/* Level at which to hint about skill reset feature */
 #endif
 #define BACT_CONTACT_OWNER		76
 /* If one adds new BACT_ do NOT forget to increase max_bact in variables.c */
