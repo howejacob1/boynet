@@ -52,19 +52,35 @@ src/common/w_z_pack.c
 src/updater/TomeNET-Updater.32b
 src/updater/TomeNET-Updater.64b
 
-# User files and backup files
-*.tmp
-*.dna
-*.xhtml
-*.txt
-*.opt.bak
-*.prf.bak
-*.opt
-*.prf
-*.pre_
+# User-specific files and character dumps
+lib/user/*.tmp
+lib/user/*.dna
+lib/user/*-death_*.xhtml
+lib/user/*-death_*.txt
+lib/user/bookmarks.tmp
+lib/user/chathist-*.tmp
+lib/user/tomenet-messages_*.txt
+lib/user/screenshot_*.xhtml
+
+# User-modified configs (character-specific)
+# Ignore any .opt or .prf that doesn't match default patterns
+lib/user/*.opt
+lib/user/*.opt.bak
+lib/user/*.prf
+lib/user/*.prf.bak
+!lib/user/global.opt
+!lib/user/global.prf
+!lib/user/font-*.prf
+!lib/user/pref-*.prf
+!lib/user/graf-*.prf
+!lib/user/arcade-*.prf
+!lib/user/graphics-*.prf
+!lib/user/linux_*.prf
+!lib/user/options.prf
+
+# Backup and temporary files (global)
 *~
-!global.opt
-!global.prf
+*.pre_
 
 # Server stdout log
 tomenet-stdout.log
