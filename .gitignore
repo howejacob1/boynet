@@ -21,9 +21,11 @@ src/preproc/preproc
 
 # Data files from a running server
 lib/data/*
+!lib/data/.gitkeep
 
 # Save files from a running server
 lib/save/*
+!lib/save/.gitkeep
 
 # banlist.txt from a running server
 lib/config/banlist.txt
