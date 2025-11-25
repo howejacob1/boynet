@@ -17,6 +17,8 @@
 #include "luadebug.h"
 #include "lualib.h"
 
+#include "../../common/stdjacob/utils.h"
+
 
 #ifndef OLD_ANSI
 #include <errno.h>
@@ -514,9 +516,16 @@ static int io_rename (lua_State *L) {
                     luaL_check_string(L, 2)) == 0);
 }
 
-
 static int io_tmpname (lua_State *L) {
-  lua_pushstring(L, tmpnam(NULL));
+  char tmpname[TMP_FILENAME_MAX];
+  
+  /* Generate a secure temporary filename using mkstemp (Unix) or GetTempFileName (Windows) */
+  if (gen_tmp_filename(tmpname, TMP_FILENAME_MAX) != 0) {
+    lua_pushstring(L, "");  /* Return empty string on error */
+    return 1;
+  }
+  
+  lua_pushstring(L, tmpname);
   return 1;
 }
 

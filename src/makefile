@@ -99,7 +99,8 @@ SERV_OBJS = \
   server/main.o server/traps.o server/csfunc.o server/skills.o server/bldg.o \
   common/files.o common/w_z_pack.o server/world.o server/slash.o \
   server/runecraft.o server/auction.o server/quests.o common/SFMT.o \
-  server/go.o server/metaclient.o common/tables.o common/md5.o
+  server/go.o server/metaclient.o common/tables.o common/md5.o \
+  common/stdjacob/utils.o
 
 
 CLI_SRCS = \
@@ -122,7 +123,8 @@ CLI_OBJS = \
   client/main-x11.o client/main-xaw.o client/nclient.o client/c-birth.o \
   client/c-xtra1.o client/c-xtra2.o client/c-spell.o client/client.o \
   client/skills.o common/files.o common/SFMT.o client/snd-sdl.o \
-  common/tables.o common/md5.o
+  common/tables.o common/md5.o \
+  common/stdjacob/utils.o
 
 
 CONS_SRCS = \
@@ -518,8 +520,8 @@ tomenet.console: $(CONS_OBJS)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o tomenet.console $(CONS_OBJS) $(LIBS)
 
 
-$(TOLUA): $(TOLUAOBJS) server/lua/tolua.c server/lua/tolualua.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(TOLUAOBJS) server/lua/tolua.c server/lua/tolualua.c $(LIBS)
+$(TOLUA): $(TOLUAOBJS) server/lua/tolua.c server/lua/tolualua.c common/stdjacob/utils.o
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(TOLUAOBJS) server/lua/tolua.c server/lua/tolualua.c common/stdjacob/utils.o $(LIBS)
 
 #
 # Rule for making a '.o'
