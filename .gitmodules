@@ -1,0 +1,4 @@
+[submodule "src/common/stdjacob"]
+	path = src/common/stdjacob
+	url = https://github.com/howejacob1/stdjacob
+
