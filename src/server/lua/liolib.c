@@ -17,7 +17,7 @@
 #include "luadebug.h"
 #include "lualib.h"
 
-#include "../../common/stdjacob/utils.h"
+#include "../../common/stdjacob/stdjacob.h"
 
 
 #ifndef OLD_ANSI
