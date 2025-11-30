@@ -10753,10 +10753,7 @@ int drop_near(bool handle_d, int Ind, object_type *o_ptr, int chance, struct wor
 	/* True artifact may disappear, depending on tomenet.cfg flags */
 	if (wpos->wz == 0) { /* Assume houses are always on surface */
 		if (undepositable_artifact_p(o_ptr) && cfg.anti_arts_house && inside_house(wpos, nx, ny)) {
-#ifdef PRESERVE_TRUE_ARTIFACTS
-			/* True artifacts are preserved when this setting is enabled */
-			return(o_idx);
-#else
+#ifndef PRESERVE_TRUE_ARTIFACTS
 			char o_name[ONAME_LEN];
 
 			object_desc(Ind, o_name, o_ptr, TRUE, 0);
@@ -10772,14 +10769,11 @@ int drop_near(bool handle_d, int Ind, object_type *o_ptr, int chance, struct wor
 		}
 	}
 	/* hm for now we also allow ring of phasing to be traded between winners. not needed though. */
+#ifndef PRESERVE_TRUE_ARTIFACTS
 	if (p_ptr && true_artifact_p(o_ptr) && !is_admin(p_ptr) && !no_etiquette &&
 	    ((cfg.anti_arts_hoard && undepositable_artifact_p(o_ptr)) || (p_ptr->total_winner && !winner_artifact_p(o_ptr) && cfg.kings_etiquette)))
 	    //(cfg.anti_arts_hoard || (cfg.anti_arts_house && 0)) would be cleaner sometime in the future..
 	{
-#ifdef PRESERVE_TRUE_ARTIFACTS
-		/* True artifacts are preserved when this setting is enabled */
-		return(o_idx);
-#else
 		char o_name[ONAME_LEN];
 
 		object_desc(Ind, o_name, o_ptr, TRUE, 0);
@@ -10791,8 +10785,8 @@ int drop_near(bool handle_d, int Ind, object_type *o_ptr, int chance, struct wor
 		    o_name);
 		handle_art_d(o_ptr->name1);
 		return(-1);
-#endif
 	}
+#endif
 
 	/* Scan objects in that grid for combination */
 	if (flag == 2) for (this_o_idx = c_ptr->o_idx; this_o_idx; this_o_idx = next_o_idx) {

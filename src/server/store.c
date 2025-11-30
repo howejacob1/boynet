@@ -6729,12 +6729,14 @@ void home_sell(int Ind, int item, int amt) {
 	/* Handle stuff */
 	handle_stuff(Ind);
 
+#ifndef PRESERVE_TRUE_ARTIFACTS
 	/* Artifact won't be deposited in your home */
 	if (undepositable_artifact_p(&sold_obj) &&
 	    (cfg.anti_arts_house || (p_ptr->total_winner && !winner_artifact_p(o_ptr) && cfg.kings_etiquette))) {
 		handle_art_d(sold_obj.name1);
 		return;
 	}
+#endif
 
 	/* The store gets that (known) item */
 	//if (sold_obj.tval != 8)	// What was it for.. ?
