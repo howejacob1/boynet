@@ -698,6 +698,10 @@ void wipe_o_list(struct worldpos *wpos) {
 
 			/* Mega-Hack -- Preserve the artifact */
 			handle_art_d(o_ptr->name1);
+#ifdef PRESERVE_TRUE_ARTIFACTS
+			/* Skip deletion - true artifacts are preserved */
+			continue;
+#endif
 		}
 		questitem_d(o_ptr, o_ptr->number);
 
@@ -796,6 +800,10 @@ void wipe_o_list_safely(struct worldpos *wpos) {
 
 			/* Mega-Hack -- Preserve the artifact */
 			handle_art_d(o_ptr->name1);
+#ifdef PRESERVE_TRUE_ARTIFACTS
+			/* Skip deletion - true artifacts are preserved */
+			continue;
+#endif
 		}
 
 		/* Extra logging for those cases of "where did my randart disappear to??1" */
@@ -866,6 +874,10 @@ void wipe_o_list_special(struct worldpos *wpos) {
 
 			/* Mega-Hack -- Preserve the artifact */
 			handle_art_d(o_ptr->name1);
+#ifdef PRESERVE_TRUE_ARTIFACTS
+			/* Skip deletion - true artifacts are preserved */
+			continue;
+#endif
 		}
 		questitem_d(o_ptr, o_ptr->number);
 

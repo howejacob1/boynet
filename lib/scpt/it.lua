@@ -29,7 +29,7 @@ list = {
 "Who were the three Eagles that rescued Frodo and Sam from Mordor? _______, _________ ___ ________", "Gwaihir, Landroval and Meneldor",
 "What do the emblems on the doors of Moria represent? _____, ______, ______", "Durin, Noldor, Feanor",
 "Who was the father of Beren? _______", "Barahir",
-"What were the names of Farmer Maggot's dogs? ____, ____, ____", "Fang, Wolf, Grip",
+"What were the names of Farmer Faggot's dogs? ____, ____, ____", "Fang, Wolf, Grip",
 "What were the names of the fathers of Merry and Pippen? _______ ___ _______", "Saradoc and Paladin",
 "What damage did Frodo do to the Lord of the Nazgul on Weathertop? __ _______ ___ _____ __ ____", "He slashed his cloak in half",
 "Who were the two Orc leaders that Hobbit-napped Merry and Pippen? _____ ___ ________", "Ugluk and Grishnak",

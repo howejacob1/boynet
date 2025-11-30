@@ -9639,7 +9639,7 @@ static void display_diz_death(int Ind) {
   changed so when leader ghosts perish the team is disbanded
   -APD-
  */
-/* Special message for deaths by Farmer Maggot's dogs?
+/* Special message for deaths by Farmer Faggot's dogs?
    %-chance to get displayed, otherwise the usual last_words from death.txt is shown. */
 #define WHO_LET_THE_DOGS_OUT 100
 void player_death(int Ind) {
@@ -10250,7 +10250,7 @@ void player_death(int Ind) {
 
  #if CHATTERBOX_LEVEL > 2
   #ifdef WHO_LET_THE_DOGS_OUT
-			if (strstr(p_ptr->died_from, "Farmer Maggot's dog") && magik(WHO_LET_THE_DOGS_OUT)) {
+			if (strstr(p_ptr->died_from, "Farmer Faggot's dog") && magik(WHO_LET_THE_DOGS_OUT)) {
 				//msg_broadcast(0, "Suddenly a thought comes to your mind:");
 				msg_broadcast(0, "Who let the dogs out?");
 			} else
@@ -10678,7 +10678,7 @@ void player_death(int Ind) {
 			msg_print(Ind, "\374\377RYou die.");
 #if CHATTERBOX_LEVEL > 2
  #ifdef WHO_LET_THE_DOGS_OUT
-			if (strstr(p_ptr->died_from, "Farmer Maggot's dog") && magik(WHO_LET_THE_DOGS_OUT)) {
+			if (strstr(p_ptr->died_from, "Farmer Faggot's dog") && magik(WHO_LET_THE_DOGS_OUT)) {
 				//msg_broadcast(0, "Suddenly a thought comes to your mind:");
 				msg_broadcast(0, "Who let the dogs out?");
 			} else
@@ -11106,7 +11106,7 @@ void player_death(int Ind) {
 
 #if CHATTERBOX_LEVEL > 2
  #ifdef WHO_LET_THE_DOGS_OUT
-	if (strstr(p_ptr->died_from, "Farmer Maggot's dog") && magik(WHO_LET_THE_DOGS_OUT)) {
+	if (strstr(p_ptr->died_from, "Farmer Faggot's dog") && magik(WHO_LET_THE_DOGS_OUT)) {
 		//msg_broadcast(0, "Suddenly a thought comes to your mind:");
 		msg_broadcast(0, "Who let the dogs out?");
 	} else

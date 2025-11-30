@@ -711,7 +711,7 @@
    This is not so much used to create wilderness than to check stuff - don't touch! */
 #define MAX_TOWNAREA	3
 
-/* How many mushroom fields on the global world surface map will we index for Farmer Maggot spawning?
+/* How many mushroom fields on the global world surface map will we index for Farmer Faggot spawning?
    At 64x64 = 4096 worldmap sectors, the value should be able to index all generated mushroom 'gardens'. */
 #define MAX_MUSHROOM_FIELDS	1024
 
@@ -1584,7 +1584,7 @@
    taunt_monsters(), monster_death(), calc_body_bonus(), price_poly_ring(), item_tester_hook_wear(), process_timers()
    and regarding mimic form handling: mimic_sheman_E, mimic_druid, mimic_vampire,
    and specifically for druid form info: check_experience(), do_cmd_check_extra_info(). */
-#define RI_FARMER_MAGGOT	8
+#define RI_FARMER_FAGGOT	8
 #define RI_LEPER		13
 #define RI_MUSHROOM_GREY	22	/* font mapping */
 #define RI_FRUIT_BAT		37	/* SKILL_MIMIC */

@@ -946,7 +946,7 @@ bool forbidden_name(char *cname) {
 	if (!strcmp(name, "quitting")) return(TRUE);
 	if (!strcmp(name, "interrupting")) return(TRUE);
 	/* not that important (just for in-game death msg design) */
-	if (strstr(name, "farmer maggot's dog")) return(TRUE);
+	if (strstr(name, "farmer faggot's dog")) return(TRUE);
 	if (!strcmp(name, "morgoth, lord of darkness")) return(TRUE);
 	if (!strcmp(name, "it")) return(TRUE); //only for log file actually?
 	if (!strcmp(name, "starvation")) return(TRUE);

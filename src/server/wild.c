@@ -974,7 +974,7 @@ static void wild_add_garden(struct worldpos *wpos, int x, int y) {
 				delete_object_idx(i, TRUE, TRUE);
 		}
 
-		/* Remember/reindex mushroom fields all over the world, for Farmer Maggot! */
+		/* Remember/reindex mushroom fields all over the world, for Farmer Faggot! */
 		if (type == WILD_CROP_MUSHROOM) {
 			for (i = 0; i < mushroom_fields; i++) {
 				if (mushroom_field_wx[i] == wpos->wx && mushroom_field_wy[i] == wpos->wy &&

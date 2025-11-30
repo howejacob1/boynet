@@ -578,6 +578,7 @@ void new_players_on_depth(struct worldpos *wpos, int value, bool inc) {
 		if (value > 0) w_ptr->surface.lastused = now;
 		/* remove 'deposited' true artefacts if last player leaves a level,
 		   and if true artefacts aren't allowed to be stored (in houses for example) */
+#ifndef PRESERVE_TRUE_ARTIFACTS
 		if (!w_ptr->surface.ondepth && cfg.anti_arts_wild) {
 			for (i = 0; i < o_max; i++) {
 				o_ptr = &o_list[i];
@@ -590,6 +591,7 @@ void new_players_on_depth(struct worldpos *wpos, int value, bool inc) {
 				}
 			}
 		}
+#endif
 	}
 
 	/* New player(s) arrive(s)? */

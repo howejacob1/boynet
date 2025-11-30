@@ -1814,7 +1814,7 @@ To find the latest change quickly, search ==== :)
 - aquatic-formed mimic can 'run' (let's say swim :) under the water.
 [B] door trap remained on the screen when disarmed.
 [B] '... teleports away' msg even when teleportation failed.
-[B] Maggot and his dogs resurrected for kings/queens.
+[B] Faggot and his dogs resurrected for kings/queens.
 
 10/06/2002 (Jir)
 - event msgs on monsters(like waking up) are shown to everyone within sight.

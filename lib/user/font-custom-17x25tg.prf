@@ -282,9 +282,9 @@ R:384:/166 # Level=24 NAME='Meneldor the Swift' Comments=BIRD
 R:410:/166 # Level=24 NAME='Gwaihir the Windlord' Comments=BIRD
 R:468:/166 # Level=30 NAME='Thorondor, Lord of Eagles' Comments=BIRD
 R:743:/166 # Level=54 NAME='The Phoenix' Comments=BIRD
-R:53:/167 # Level=2 NAME='Grip, Farmer Maggot's dog' Comments=WOLF
-R:54:/167 # Level=2 NAME='Wolf, Farmer Maggot's dog' Comments=WOLF
-R:55:/167 # Level=2 NAME='Fang, Farmer Maggot's dog' Comments=WOLF
+R:53:/167 # Level=2 NAME='Grip, Farmer Faggot's dog' Comments=WOLF
+R:54:/167 # Level=2 NAME='Wolf, Farmer Faggot's dog' Comments=WOLF
+R:55:/167 # Level=2 NAME='Fang, Farmer Faggot's dog' Comments=WOLF
 R:170:/167 # Level=9 NAME='Bloodfang, the Wolf' Comments=WOLF
 R:717:/167 # Level=49 NAME='Garm, Guardian of Hel' Comments=WOLF
 R:840:/167 # Level=83 NAME='Draugluin, Sire of All Werewolves' Comments=WOLF
@@ -330,7 +330,7 @@ R:877:/174 # Level=74 NAME='Pestilence' Comments=// GHOST horseman joke
 R:878:/174 # Level=71 NAME='War' Comments=// GHOST horseman joke
 R:1009:/174 # Level=34 NAME='Fire Phantom' Comments=GHOST
 R:1032:/174 # Level=127 NAME='Tik'srvzllat' Comments=GHOST
-R:8:/ # Level=0 NAME='Farmer Maggot' Comments=// NO TILE too low ID to make it HOBBIT
+R:8:/ # Level=0 NAME='Farmer Faggot' Comments=// NO TILE too low ID to make it HOBBIT
 R:63:/176 # Level=3 NAME='Smeagol' Comments=SMALL HUMANOID
 R:382:/177 # Level=24 NAME='Khim, Son of Mim' Comments=DWARF
 R:383:/177 # Level=24 NAME='Ibun, Son of Mim' Comments=DWARF

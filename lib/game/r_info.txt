@@ -287,7 +287,7 @@ F:ALLOW_RUNNING | RAND_25 | DROP_SKELETON | DROP_CORPSE
 F:WILD_TOWN | WILD_ONLY | ANIMAL | MORTAL | BASEANGBAND
 D:A thin flea-ridden mutt, growling as you get close.
 
-N:8:Farmer Maggot
+N:8:Farmer Faggot
 G:h:w
 I:110:35d10:40:10:3
 W:0:4:730:0
@@ -903,7 +903,7 @@ F:ANIMAL | RES_ACID | CAN_SPEAK |
 F:MORTAL | BASEANGBAND
 D:A small humanoid figure.
 
-N:53:Grip, Farmer Maggot's dog
+N:53:Grip, Farmer Faggot's dog
 G:C:w
 I:120:7d5:30:30:0
 W:2:2:600:30
@@ -914,10 +914,10 @@ F:UNIQUE | SPECIAL_GENE
 F:FORCE_MAXHP | RAND_25 | DROP_CORPSE
 F:BASH_DOOR | ANIMAL | NO_CONF | NO_SLEEP | NO_FEAR |
 F:MORTAL | BASEANGBAND
-D:A rather vicious dog belonging to Farmer Maggot. It thinks you are
+D:A rather vicious dog belonging to Farmer Faggot. It thinks you are
 D:stealing mushrooms.
 
-N:54:Wolf, Farmer Maggot's dog
+N:54:Wolf, Farmer Faggot's dog
 G:C:w
 I:120:7d5:30:30:0
 W:2:2:650:30
@@ -928,10 +928,10 @@ F:UNIQUE | SPECIAL_GENE
 F:FORCE_MAXHP | RAND_25 | DROP_CORPSE
 F:BASH_DOOR | NO_CONF | NO_SLEEP | NO_FEAR |
 F:ANIMAL | MORTAL | BASEANGBAND
-D:A rather vicious dog belonging to Farmer Maggot. It thinks you are
+D:A rather vicious dog belonging to Farmer Faggot. It thinks you are
 D:stealing mushrooms.
 
-N:55:Fang, Farmer Maggot's dog
+N:55:Fang, Farmer Faggot's dog
 G:C:w
 I:120:7d5:30:30:0
 W:2:2:700:30
@@ -942,7 +942,7 @@ F:UNIQUE | SPECIAL_GENE
 F:FORCE_MAXHP | RAND_25 | DROP_CORPSE
 F:BASH_DOOR | NO_CONF | NO_SLEEP | NO_FEAR |
 F:ANIMAL | MORTAL | BASEANGBAND
-D:A rather vicious dog belonging to Farmer Maggot. It thinks you are
+D:A rather vicious dog belonging to Farmer Faggot. It thinks you are
 D:stealing mushrooms.
 
 N:56:Giant green frog

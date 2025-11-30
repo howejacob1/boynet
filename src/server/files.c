@@ -1166,7 +1166,7 @@ unsigned int total_points(int Ind) {
 	u32b lev_factoring;
 	player_type *p_ptr = Players[Ind];
 
-	/* kill maggot for 100% bonus on total score? -> no
+	/* kill faggot for 100% bonus on total score? -> no
 	   why a little bonus for HELL mode? the honour for the player
 	   who chooses hell mode on his own is far greater without it. -> (no) yes!
 	   add cash to exp? what if the player collected cool gear instead?
@@ -1239,7 +1239,7 @@ s_printf("points=%u\n", points);
 	//level counts mainly, exp factors in at higher levels
 	//return(p_ptr->max_plv * (300 + (p_ptr->max_exp / 100000)) / 300);
 #if 0
-	/* Maggot bonus.. beware, r_idx is hard-coded! */
+	/* Faggot bonus.. beware, r_idx is hard-coded! */
 	int i = p_ptr->r_killed[8]? 50 : 100;
 	if (p_ptr->mode & MODE_HARD) i = i * 5 / 4;
 

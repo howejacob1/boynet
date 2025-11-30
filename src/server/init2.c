@@ -3616,7 +3616,7 @@ void init_some_arrays(void) {
 	if (max_r_idx) {
 		monster_race *r_ptr;
 
-		/* Hack -- never Maggot and his dogs :) (also includes joke monsters Martti Ihrasaari and The Greater hell-beast) */
+		/* Hack -- never Faggot and his dogs :) (also includes joke monsters Martti Ihrasaari and The Greater hell-beast) */
 		for (h = 57; h < max_r_idx; h++) { // (57 is Freesia)
 			r_ptr = &r_info[h];
 

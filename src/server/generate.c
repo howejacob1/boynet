@@ -11429,6 +11429,7 @@ void dealloc_dungeon_level(struct worldpos *wpos) {
 		save_guildhalls(wpos);	/* has to be done here */
 
 		/* remove 'deposited' true artefacts from wilderness */
+#ifndef PRESERVE_TRUE_ARTIFACTS
 		if (cfg.anti_arts_wild) {
 			for (i = 0; i < o_max; i++) {
 				o_ptr = &o_list[i];
@@ -11442,6 +11443,7 @@ void dealloc_dungeon_level(struct worldpos *wpos) {
 				}
 			}
 		}
+#endif
 	}
 
 	for (i = 0; i < MAX_HGT; i++) {

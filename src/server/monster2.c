@@ -3593,8 +3593,8 @@ if (PMO_DEBUG == r_idx) s_printf("PMO_DEBUG 10\n");
 		}
 	}
 
-	/* Farmer Maggot! Can only spawn on world surface, nearby towns, inside mushroom fields! - C. Blue */
-	if (r_idx == RI_FARMER_MAGGOT) {
+	/* Farmer Faggot! Can only spawn on world surface, nearby towns, inside mushroom fields! - C. Blue */
+	if (r_idx == RI_FARMER_FAGGOT) {
 		/* Allow up to 4 mushroom fields per wpos sector */
 		int mfx[4], mfy[4], mfs = 0;
 
@@ -3602,7 +3602,7 @@ if (PMO_DEBUG == r_idx) s_printf("PMO_DEBUG 10\n");
 		if (wpos->wz) return(56);
 
 		/* Scan this area for mushroom fields */
-		//if (!istownarea(wpos, MAX_TOWNAREA)) return(57); /* Maggot would never dare to leave town and go on an adventure.. */
+		//if (!istownarea(wpos, MAX_TOWNAREA)) return(57); /* Faggot would never dare to leave town and go on an adventure.. */
 		for (i = 0; i < mushroom_fields; i++) {
 			if (mushroom_field_wx[i] != wpos->wx || mushroom_field_wy[i] != wpos->wy) continue;
 			mfx[mfs] = mushroom_field_x[i];
@@ -3617,7 +3617,7 @@ if (PMO_DEBUG == r_idx) s_printf("PMO_DEBUG 10\n");
 		x = mfx[i] - 5 + rand_int(11);
 		y = mfy[i] - 2 + rand_int(5);
 		set_in_bounds(y, x);
-		s_printf("PMO_DEBUG: Farmer Maggot prepared on (%2d,%2d) [%3d,%2d].\n", wpos->wx, wpos->wy, x, y);
+		s_printf("PMO_DEBUG: Farmer Faggot prepared on (%2d,%2d) [%3d,%2d].\n", wpos->wx, wpos->wy, x, y);
 	}
 
 	/* Access the location */
@@ -3922,7 +3922,7 @@ if (PMO_DEBUG == r_idx) s_printf("PMO_DEBUG ok\n");
 	}
 	if (r_idx == RI_PUMPKIN) s_printf("HALLOWEEN: The Great Pumpkin (%d) was created on %d,%d,%d (%d HP)\n", r_idx, wpos->wx, wpos->wy, wpos->wz, m_ptr->maxhp);
 	if (r_idx == RI_MIRROR) s_printf("Mirror was created on %d\n", dlev);
-	if (r_idx == RI_FARMER_MAGGOT) s_printf("PMO_DEBUG: Farmer Maggot was created.\n");
+	if (r_idx == RI_FARMER_FAGGOT) s_printf("PMO_DEBUG: Farmer Faggot was created.\n");
 
 	/* Handle floor feelings */
 	/* Special events don't necessarily influence floor feelings */
