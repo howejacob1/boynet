@@ -6637,9 +6637,7 @@ void home_sell(int Ind, int item, int amt) {
 	}
 
 	if (cfg.anti_arts_house && undepositable_artifact_p(o_ptr)) {
-#ifdef PRESERVE_TRUE_ARTIFACTS
-		msg_print(Ind, "This true artifact will be preserved if stocked.");
-#else
+#ifndef PRESERVE_TRUE_ARTIFACTS
 		msg_print(Ind, "You cannot stock this artifact.");
 		return;
 #endif
