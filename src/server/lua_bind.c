@@ -1309,8 +1309,8 @@ bool lua_mimic_eligible(int Ind, int r_idx) {
 		return(mimic_vampire(r_idx, Players[Ind]->lev));
 	}
 
-	if (Players[Ind]->pclass == CLASS_SHAMAN) {
-		return(mimic_shaman(r_idx));
+	if (Players[Ind]->pclass == CLASS_SHEMAN) {
+		return(mimic_sheman(r_idx));
 	} else if (Players[Ind]->pclass == CLASS_DRUID) {
 		return(mimic_druid(r_idx, Players[Ind]->lev));
 	}

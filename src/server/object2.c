@@ -8755,7 +8755,7 @@ static int reward_melee_check(player_type *p_ptr, long int treshold) {
 	    !(p_ptr->inventory[INVEN_ARM].k_idx && p_ptr->inventory[INVEN_ARM].tval == TV_SHIELD)) return(selection);
 	/* player's form cannot equip shields? */
 	if (!item_tester_hook_wear(p_ptr->Ind, INVEN_ARM)) return(selection);
-//Nope, they can!	if (p_ptr->pclass == CLASS_SHAMAN) return(selection); /* shamans cannot cast magic well with shield. */
+//Nope, they can!	if (p_ptr->pclass == CLASS_SHEMAN) return(selection); /* shemans cannot cast magic well with shield. */
 	switch (selection) {
 	case 1: if magik(35) selection = 6; break;
 	case 2: if magik(30) selection = 6; break;
@@ -8962,7 +8962,7 @@ void create_reward(int Ind, object_type *o_ptr, int min_lv, int max_lv, bool gre
 			break;
 		case CLASS_MAGE:
 		case CLASS_RUNEMASTER:
-		case CLASS_SHAMAN:
+		case CLASS_SHEMAN:
 			if (item_tester_hook_wear(Ind, INVEN_WIELD)) spell_choice = 1;
 			break;
 		}
@@ -9463,7 +9463,7 @@ void create_reward(int Ind, object_type *o_ptr, int min_lv, int max_lv, bool gre
 
 	/* are we definitely going to use spells? (used for AM/MPDrain check) */
 	switch (p_ptr->pclass) {
-	case CLASS_SHAMAN:
+	case CLASS_SHEMAN:
 	case CLASS_MAGE:
 	case CLASS_RUNEMASTER:
 	case CLASS_MINDCRAFTER:
@@ -9639,7 +9639,7 @@ void create_reward(int Ind, object_type *o_ptr, int min_lv, int max_lv, bool gre
 			if ((p_ptr->stat_max[A_WIS] > p_ptr->stat_max[A_INT]) &&
 			    (o_ptr->name2 == EGO_INTELLIGENCE && !o_ptr->name2b)) continue;
 			__attribute__ ((fallthrough));
-		case CLASS_SHAMAN:
+		case CLASS_SHEMAN:
 			if (!melee_choice && !ranged_choice && o_ptr->name2 == EGO_MIGHT && !o_ptr->name2b) continue; //ranged_choice for Adventurers falling through
 			break;
 		/* INT users cascade */

@@ -410,7 +410,7 @@
 
 #define DEATH_FATE_SPECIAL	/* Death Fate special */
 
-/* Enable o_*.lua 'Occult' magic schools (shamans, rogues, adventurers) */
+/* Enable o_*.lua 'Occult' magic schools (shemans, rogues, adventurers) */
 #define ENABLE_OCCULT
 
 /* Allow 'Vampire Paladins' aka Death Knights. Requires ENABLE_OCCULT. */

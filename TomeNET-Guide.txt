@@ -354,7 +354,7 @@ more details see "PROBLEM 77".
 
  ---- PLEASE NOTE: ----
  If you are new to the game, it is NOT recommended to choose one of these:
-  Istar, Priest, Shaman, Adventurer, Runemaster.
+  Istar, Priest, Sheman, Adventurer, Runemaster.
  The reason is that these classes are hard to play in the beginning -
   compare introductory explanation in (7.5)!
  Recommended for new players are:
@@ -5676,7 +5676,7 @@ strengths or weaknesses.
 
 
 Next you have to choose your class. Spellcasters like Istari (elvish word for
-mages), Shamans or Runemasters are physically weaker and especially hard to
+mages), Shemans or Runemasters are physically weaker and especially hard to
 play for beginners.
 If you choose a spellcaster, be aware that his casting ability depends on
 either his intelligence or his wisdom, depending on the actual class.
@@ -5708,7 +5708,7 @@ Ranger          Very versatile fighter using melee, ranged, spells or trapping.
 Adventurer      Most versatile class, can train almost any skill. On the other
                 hand that makes it easy to mess up by diluting skills too much.
 Druid           Shapeshifter using martial arts and various spells.
-Shaman          Versatile spellcaster/shapeshifter, can access melee skills.
+Sheman          Versatile spellcaster/shapeshifter, can access melee skills.
 Runemaster      Destructive spellcaster, can access melee skills and even
                 train shoplifting same as rogue.
 Mindcrafter     Versatile spellcaster/melee combat hybrid.
@@ -5716,7 +5716,7 @@ Mindcrafter     Versatile spellcaster/melee combat hybrid.
 
  ---- PLEASE NOTE: ----
  If you are new to the game, it is NOT recommended to choose one of these:
- Istar, Priest, Shaman, Adventurer, Runemaster.
+ Istar, Priest, Sheman, Adventurer, Runemaster.
  The reason is that these classes are hard to play in the beginning -
  compare introductory explanation in (7.5)!
 
@@ -12968,7 +12968,7 @@ Archer        -
 Paladin       30.0 lb (also Death Knight/Hell Knight)
 Ranger        22.0 lb
 Druid         20.0 lb
-Shaman        17.0 lb
+Sheman        17.0 lb
 Runemaster    23.0 lb
 Mindcrafter   26.0 lb (and will get penalty for head gear heavier than 4.0 lb)
 
@@ -20140,7 +20140,7 @@ create a character!):
     They are able to take most roles, being somewhat better at archery than
     close combat. Their intelligence is somewhat suspect, and although they do
     not pick up careers as mages or other very elaborate professions, they can
-    become shamans or druids.
+    become shemans or druids.
     Kobolds are omnivores but since many of them live underground, a primary
     food source are mushrooms. Kobolds are able to determine the quality of a
     mushroom immediately when they find one.
@@ -20408,7 +20408,7 @@ Intermediate starting difficulty:
 Hardest classes for beginners to play maybe:
  -Adventurer (cause it's a jack of all trades so you can end up mediocre in
              every regard if you don't know what you're doing)
- -Shaman (triple-relation of forms, combat skills and magic spells)
+ -Sheman (triple-relation of forms, combat skills and magic spells)
  -Priest (weak in almost all regards the beginning, but great early on party
          asset if he gets the 'Cure Wounds' spell and uses it to heal his party
          members from the back line)
@@ -20911,12 +20911,12 @@ create a character!):
     using martial arts, since as a martial artist you cannot use weapons except
     for boomerangs).
 
-- Shaman
-    Shamans are able to call upon both spiritual and magical powers, whatever
+- Sheman
+    Shemans are able to call upon both spiritual and magical powers, whatever
     they deem most appropriate. Their mind is also trained in a very versatile
     manner, allowing them to collect energy from intelligence or wisdom,
     whatever currently is easiest for them!
-    Shamans are able to shapeshift same as mimics (see mimics above for details
+    Shemans are able to shapeshift same as mimics (see mimics above for details
     about how to learn forms) but they are limited to animals, trolls, giants,
     dragons and dragonriders, angels, hybrid creatures, golems, spirits,
     elementals and ghosts.
@@ -20924,22 +20924,22 @@ create a character!):
     equipment and they are always able to move straight even if the creature in
     whose shape they appear usually moves erratically - these two are feats
     that mimics cannot achieve.
-    Shamans learn elemental ('E') and semi-elemental ('X') forms especially
+    Shemans learn elemental ('E') and semi-elemental ('X') forms especially
     quickly (one kill of any of these counts as three kills towards learning
     the form).
     They cannot use non-living or undead forms except for ghosts, spirits,
-    elementals and golems. Shamans also cannot learn the three non-elemental
+    elementals and golems. Shemans also cannot learn the three non-elemental
     aberrations of the 'E' forms: Invisible Stalker, Unmaker and Death Orb.
-    While shamans are excellent at magic they have weaker combat abilities than
+    While shemans are excellent at magic they have weaker combat abilities than
     rangers or paladins but still don't need to hide from a melee if trained
     properly.
     Their spiritual abilities allow them to easily train various aspects of
-    necromancy as they see fit. Accordingly at level 20 shamans learn to
+    necromancy as they see fit. Accordingly at level 20 shemans learn to
     perceive the invisible.
 
-    A list of useful low-level forms for mimicry users, that includes shamans,
+    A list of useful low-level forms for mimicry users, that includes shemans,
     is given in (7.7b). It points out some forms that are usable exclusively
-    by shamans too and are not so useful to normal mimics. It also lists some
+    by shemans too and are not so useful to normal mimics. It also lists some
     humanoid forms in case you are training a weapon skill.
 
     Tips:
@@ -20947,16 +20947,16 @@ create a character!):
     Maybe there's a friendly mimicry-user around who can forge some
     'Rings of Polymorphing' for you from forms he or she no longer uses.
 
-    In the beginning shamans have few hit points and skill point distribution
+    In the beginning shemans have few hit points and skill point distribution
     isn't easy either, that's why this class is not recommended for beginners.
 
     As for all shape-shifters going with fruit bat body modification is not
     recommended, since it will restrict your equipment even if you polymorph.
 
     Note that all 'O' Ogre type monsters count as 'giants' too, so their forms
-    are usable in shaman mimicry.
+    are usable in sheman mimicry.
 
-    A tip for weapon-using shamans who are short on STR for gaining more BpR:
+    A tip for weapon-using shemans who are short on STR for gaining more BpR:
     Forms giving a strength bonus are relatively common, eg Forest Troll, so if
     your BpR is close to a break point and just requires +1 or +2 more STR, try
     using troll form to see if its STR bonus gives you that juicy +1 BpR.
@@ -21083,7 +21083,7 @@ Adventurer     0    0    0    0    0    0         +6    +25%         4
  violet       30   22   20    3   15   15   50   50            fair     fair
 Druid         +1    0   +2   -2   -2   +1         +5    +35%         4
  light green  25   35   30    4   25   25   50   44            poor     poor
-Shaman         0   +1   +2   -2    0    0         +3    +40%         4
+Sheman         0   +1   +2   -2    0    0         +3    +40%         4
  light red    15   30   30    4   30   20   45   23            poor     poor
 Runemaster     0   +2   -2   +2   -2    0         +4    +40%         4
  light blue   35   32   20    3   30   26   45   40            fair     poor
@@ -21200,7 +21200,7 @@ Adventurer      similar to ranger.
 
 Druid           -
 
-Shaman          similar to priest.
+Sheman          similar to priest.
 
 Runemaster      similar to rogue.
 
@@ -21428,7 +21428,7 @@ being awarded at level 99, the maximum level reachable.
                   90                   Autumn
                   99                   Evergreen
 
-  Shaman
+  Sheman
                    1                   Smoker
                    5                   Novice Walker
                   10                   Walker
@@ -21438,8 +21438,8 @@ being awarded at level 99, the maximum level reachable.
                   30                   Cursed
                   35       Chanter                 Chantress
                   40       Elder Chanter           Elder Chantress
-                  45                   Shaman
-                  50                   Elder Shaman
+                  45                   Sheman
+                  50                   Elder Sheman
 
                   60                   Spirit Keeper
                   70                   Spirit Master
@@ -21570,7 +21570,7 @@ Note: For some classes the power curve can depend heavily on the way you
       Archers and Runemasters can reach '++++' in 'Endgame' and 'Post-winning'
       in terms of damage output if they can rely on a good party.
 
-      Shamans can reach '++++' in 'Late', 'Endgame' and 'Post-winning' in terms
+      Shemans can reach '++++' in 'Late', 'Endgame' and 'Post-winning' in terms
       of utility, as they may access all features of Istari, Priests and also
       those of Mimicry and Runecraft without that much expense of skill points.
 
@@ -21593,7 +21593,7 @@ Hell Knight   +++       +++       +++       +++       +++       +++
 Ranger        +++       +++       +++       +++       +++       +++
 Adventurer    +         +         ++        +++       +++       +++
 Druid         +++       ++++      ++++      +++       +++       +++
-Shaman        ++        ++        +++       +++.      +++.      +++.
+Sheman        ++        ++        +++       +++.      +++.      +++.
 Runemaster    +         +++       +++       +++       +++       +++
 Mindcrafter   +++       ++        +++       +++       +++       +++
 
@@ -21686,7 +21686,7 @@ How exactly stats are calculated is written below for each case.
 
 If a mimic wields a weapon while using a form which usually cannot use weapons
 the number of blows per round will be set to 1 (regardless of extra attacks).
-(This only really applies to druids, shamans or perma-cursed weapons (5.12)).
+(This only really applies to druids, shemans or perma-cursed weapons (5.12)).
 
 If a mimic polymorphs into a form that cannot wear certain pieces of equipment,
 these will all be taken off and placed into the inventory in the usual sorting
@@ -22144,7 +22144,7 @@ activate the ring, or activation will fail with a message saying
 "The ring flashes briefly, but nothing happens."
 
 - Also the character must be eligible to use that form in general, for example
-shamans cannot use certain forms. If the character is not eligible, activation
+shemans cannot use certain forms. If the character is not eligible, activation
 will fail with a message "The ring starts to glow brightly, then fades again".
 
 - Last but not least, rings cannot be used to store level 0 forms such as Bree
@@ -22212,7 +22212,7 @@ rules out animal forms. To make form-hunting a bit easier in the beginning here
 is a list of useful low-level forms that are humanoid and allow the player to
 wear/wield full equipment:
 
- -- Note: Forms usable by shamans are marked with an asterisk '*'. --
+ -- Note: Forms usable by shemans are marked with an asterisk '*'. --
 
 Forms you can already get in Bree town:
 ---------------------------------------
@@ -22244,7 +22244,7 @@ Novice mage      2  Sort of weak but has 'Blink' spell (aka Phase Door) and
                     It occurs solo at depth 2, but in packs at depth 6!
 Novice priest    2  Sort of weak but can cast fear/curse and self-heal spells.
                     It occurs solo at depth 2, but in packs at depth 6!
-*Poltergeist     3  Useful only for shamans because it has no limbs!
+*Poltergeist     3  Useful only for shemans because it has no limbs!
                     This form can pass solid walls and makes you invisible!
                     Also gives fear/confusion/cold/sound/insanity/time
                     resistance, free action, poison immunity, and you won't
@@ -22272,7 +22272,7 @@ Rotting corpse   8  Free action, resists confusion/fear/cold, poison immunity,
                     brands melee attacks with poison, decent AC.
                     Despite its lack of physical thoughness this is a very
                     underrated form considering all the beneficial abilities.
-*Phantom warrior 8  Useful only for shamans because it has no limbs!
+*Phantom warrior 8  Useful only for shemans because it has no limbs!
                     This form can pass solid walls!
                     Also gives fear/sound/insanity resistance, free action,
                     poison immunity, and you won't bleed from cuts.
@@ -22289,9 +22289,9 @@ Tengu           10  Moves quickly, high HP, good AC, can blink/teleport and
 *Master yeek    12  Although everyone knows that Yeek = weak, this particular
                     kind of Yeek can cast some interesting magic spells.
                     And as a plus it's actually immune to acid.
-*Air spirit     12  Useful only for shamans because it has no limbs!
-                    Since this is an 'E' form, shamans learn it very quickly.
-                    An insanely powerful early shaman form, since it gives a
+*Air spirit     12  Useful only for shemans because it has no limbs!
+                    Since this is an 'E' form, shemans learn it very quickly.
+                    An insanely powerful early sheman form, since it gives a
                     big speed bonus, levitation and invisibility!
                     It also gives free action and resists fear, confusion,
                     light, dark, bleeding (cannot be cut), insanity,
@@ -22307,7 +22307,7 @@ Illusionist and Druid
                     (These two do not occur in packs.)
 *Ogre           13  This strong form can cross forest and mountain terrain.
                     Note that Ogres also count as giants which means that
-                    shamans can use this form too.
+                    shemans can use this form too.
                     (This monster occurs somewhat more rarely than the others.)
 Black orc       13  Good HP, good melee damage, +1 extra shot w/ slings/bows.
 *Black Ogre     15  Slightly stronger than Ogre but cannot move through woods.
@@ -22315,12 +22315,12 @@ Lizard man      16  Good HP, can swim easily, resists water, immune to acid.
                     (This monster occurs somewhat more rarely than the others.)
 *Ogrillon       16  Very high HP for its level, good melee damage.
                     Note that Ogrillons also count as giants which means that
-                    shamans can use this form too.
+                    shemans can use this form too.
                     (This monster occurs somewhat more rarely than the others.)
 Uruk            16  Good HP, good melee damage, good AC, +1 extra shot w/
                     slings or bows, poison immunity.
-*Umber hulk     16  Shamans can use full equipment in this form, others cannot.
-                    Since this is an 'X' form, shamans learn it very quickly.
+*Umber hulk     16  Shemans can use full equipment in this form, others cannot.
+                    Since this is an 'X' form, shemans learn it very quickly.
                     It's not really strong but it destroys walls just by moving
                     into them, allowing you to tunnel easily without any
                     digging tool.
@@ -22332,8 +22332,8 @@ Uruk            16  Good HP, good melee damage, good AC, +1 extra shot w/
 *Forest troll   17  High HP, good AC, can pass trees, and like all trolls (and
                     hydras by the way) has extraordinarily fast HP regeneration
                     (2x as much as and not stacking with REGEN flag).
-*Earth spirit   17  Useful only for shamans because it has no limbs!
-                    Since this is an 'E' form, shamans learn it very quickly.
+*Earth spirit   17  Useful only for shemans because it has no limbs!
+                    Since this is an 'E' form, shemans learn it very quickly.
                     Similar to Air spirit (see further above) this form comes
                     with very useful abilities (and more hit points), even
                     though it is less speedy than Air spirits. Earth spirits
@@ -22556,7 +22556,7 @@ Firebird                speedy and tough; can fly and passes most terrains;
 
 (7.8) Spells and prayers
 ------------------------
-Istari (mages), rangers, rogues, priests, paladins, druids, shamans,
+Istari (mages), rangers, rogues, priests, paladins, druids, shemans,
 mindcrafters, runemasters, mimics and even adventurers can cast magic spells,
 use telepathic powers (which are the same as spells, technically) draw runes
 or speak prayers.
@@ -25554,7 +25554,7 @@ The techniques are as follows:
         you. Might require more than one try sometimes until they fall for it,
         depending on the monster. Some, mostly mages, won't be affected at all
         even.
-        Most common targets are typically shaman and priest class monsters.
+        Most common targets are typically sheman and priest class monsters.
         Note that this can also be used to make scared monsters agressive,
         and -if you and an ally both stand next to the same monster- to draw
         its attention from your ally and make it attack you instead.
@@ -25754,7 +25754,7 @@ Hell Knight |   5    9         11                            20   35
 Ranger      |   3    8         13             7 (TA)         17
 Adventurer  |   3    5     9   13
 Druid       |   5
-Shaman      |
+Sheman      |
 Runemaster  |   4    6     8
 Mindcrafter |        8         13   12
 
@@ -26348,7 +26348,7 @@ to manage it.
 
 -If you prefer close combat over ranged and your character can use fighting
  techniques, make sure to use the 'Sprint' or 'Taunt' technique to catch
- annoying monsters like shamans or priests that otherwise try to keep a
+ annoying monsters like shemans or priests that otherwise try to keep a
  distance.
 
 -The range of your missile weapon (slings, bows, crossbows, boomerangs) is

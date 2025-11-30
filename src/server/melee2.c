@@ -9511,7 +9511,7 @@ static player_type *get_melee_target(monster_race *r_ptr, monster_type *m_ptr, c
 					target_toughness = 1;
 					break;
 
-				case CLASS_SHAMAN: /* todo maybe: depends on mimic form */
+				case CLASS_SHEMAN: /* todo maybe: depends on mimic form */
 					if ((pd_ptr->body_monster && pd_ptr->form_hp_ratio >= 125)
 					    || pd_ptr->ac + pd_ptr->to_a >= p_tough_ac[pd_ptr->lev > 50 ? 50 : pd_ptr->lev - 1]) {
 						target_toughness = 1;

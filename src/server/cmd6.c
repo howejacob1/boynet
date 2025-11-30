@@ -7691,7 +7691,7 @@ void do_cmd_activate(int Ind, int item, int dir) {
 				if (!get_skill(p_ptr, SKILL_MIMIC) ||
 				    (p_ptr->pclass == CLASS_DRUID) ||
 				    (p_ptr->prace == RACE_VAMPIRE) ||
-				    (p_ptr->pclass == CLASS_SHAMAN && !mimic_shaman(o_ptr->pval))) {
+				    (p_ptr->pclass == CLASS_SHEMAN && !mimic_sheman(o_ptr->pval))) {
 					msg_print(Ind, "The ring starts to glow brightly, then fades again.");
 					return;
 				}

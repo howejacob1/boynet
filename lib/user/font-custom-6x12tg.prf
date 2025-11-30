@@ -883,10 +883,10 @@ R:865:/ # Level=15 NAME='Dwarven warrior' Comments=
 R:882:/ # Level=4 NAME='Mermaid' Comments=
 R:886:/ # Level=7 NAME='Bullywug' Comments=
 R:887:/ # Level=8 NAME='Bullywug warrior' Comments=
-R:888:/ # Level=8 NAME='Bullywug shaman' Comments=
+R:888:/ # Level=8 NAME='Bullywug sheman' Comments=
 R:904:/ # Level=9 NAME='Aquatic elf' Comments=
 R:905:/ # Level=10 NAME='Aquatic elven warrior' Comments=
-R:906:/ # Level=10 NAME='Aquatic elven shaman' Comments=
+R:906:/ # Level=10 NAME='Aquatic elven sheman' Comments=
 R:945:/218 # Level=40 NAME='High-elven ranger' Comments=h I
 R:1016:/ # Level=29 NAME='Dimensional shambler' Comments=
 R:1057:/ # Level=22 NAME='Sirene' Comments=
@@ -1164,7 +1164,7 @@ R:156:/ # Level=9 NAME='Giant grey rat' Comments=
 R:158:/ # Level=9 NAME='Skaven' Comments=
 R:161:/ # Level=9 NAME='Rock mole' Comments=
 R:205:/ # Level=11 NAME='Vorpal bunny' Comments=
-R:217:/ # Level=12 NAME='Skaven shaman' Comments=
+R:217:/ # Level=12 NAME='Skaven sheman' Comments=
 R:270:/ # Level=15 NAME='Wererat' Comments=
 R:1005:/ # Level=4 NAME='Silver mouse' Comments=
 R:23:/ # Level=1 NAME='Newt' Comments=

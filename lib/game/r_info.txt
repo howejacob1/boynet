@@ -3258,7 +3258,7 @@ F:OPEN_DOOR | BASH_DOOR
 F:MORTAL | BASEANGBAND | HAS_LITE
 D:A warrior of considerable skill.
 
-N:217:Skaven shaman
+N:217:Skaven sheman
 G:r:R
 I:110:10d8:20:15:20
 W:12:1:600:36
@@ -3272,7 +3272,7 @@ F:OPEN_DOOR | BASH_DOOR | DROP_SKELETON | DROP_CORPSE |
 F:EVIL | MORTAL | ZANGBAND | ANIMAL
 S:1_IN_8 |
 S:BLINK | CURSE | MISSILE | CONF | SCARE
-D:The shaman of a skaven tribe gets his powers from a mystic
+D:The sheman of a skaven tribe gets his powers from a mystic
 D:stone corrupted by chaos, called a Warp Stone.
 
 N:218:Baby bronze dragon
@@ -15739,7 +15739,7 @@ F:MALE | ONLY_ITEM | DROP_1D2 | SMART | AQUATIC | DROP_CORPSE |
 F:MORTAL | BASEANGBAND | HAS_LITE | COLD_BLOOD
 D:A member of the frog-people clan. He is wielding a long, sharp shark tooth.
 
-N:888:Bullywug shaman
+N:888:Bullywug sheman
 G:h:R
 I:110:6d10:20:15:0
 W:8:1:800:35
@@ -16006,7 +16006,7 @@ F:MALE | AQUATIC | FRIENDS | SMART | DROP_60 | DROP_CORPSE | ZANGBAND |
 F:HAS_LITE
 D:An aquatic elf trained in all forms of combat.
 
-N:906:Aquatic elven shaman
+N:906:Aquatic elven sheman
 G:h:R
 I:110:12d8:30:30:6
 W:10:1:1400:35
@@ -17840,7 +17840,7 @@ F:EVIL | IM_POIS |
 F:MORTAL | BASEANGBAND | HAS_LITE
 S:1_IN_6 | MISSILE | HEAL | CURSE | CONF
 D:Where Mughash is the strongest of his kind, his consort Vort is the
-D:wisest: she is her tribe's chief shamaness.
+D:wisest: she is her tribe's chief shemaness.
 
 N:1008:Giant black louse
 G:I:D

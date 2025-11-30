@@ -1186,7 +1186,7 @@ unsigned int total_points(int Ind) {
 	/* Overflow notes: Currently the system has a maximum reachable score for
 	   Level 100 (admin-only, player stops at 99), 999 999 999 XP,
 	   Mode: Dedicated-IDDC, no-ghost (implied by DED_IDDC), Hard (aka hellish),
-	   Maia (400% XP) Shaman (+40% XP) -> 3 782 257 996 points score (max is 2^32-1, aka uint32). */
+	   Maia (400% XP) Sheman (+40% XP) -> 3 782 257 996 points score (max is 2^32-1, aka uint32). */
 
 #ifndef ALT_EXPRATIO
 	/* Bonus might cause overflow at lvl 94+ - so maybe compensate */

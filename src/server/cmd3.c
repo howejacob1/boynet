@@ -648,7 +648,7 @@ bool item_tester_hook_wear(int Ind, int slot) {
 
 	if (p_ptr->body_monster &&
 	    (p_ptr->pclass != CLASS_DRUID) &&
-	    ((p_ptr->pclass != CLASS_SHAMAN) || !mimic_shaman_fulleq(r_ptr->d_char)) &&
+	    ((p_ptr->pclass != CLASS_SHEMAN) || !mimic_sheman_fulleq(r_ptr->d_char)) &&
 	    (p_ptr->prace != RACE_VAMPIRE)
 	    ) {
 		switch (slot) {
@@ -741,7 +741,7 @@ void do_takeoff_impossible(int Ind) {
 		}
 		/* new: also redisplay empty slots as '(unavailable)' after a form change, if they are */
 		if (!o_ptr->k_idx) Send_equip_availability(Ind, k);
-		/* for druids/shamans: climbing set may not work with form even though it is equippable! */
+		/* for druids/shemans: climbing set may not work with form even though it is equippable! */
 		else if (k == INVEN_TOOL) Send_equip_availability(Ind, k);
 	}
 }

@@ -1554,7 +1554,7 @@ void do_cmd_mimic(int Ind, int spell, int dir) {
 			if (strlen(r_ptr->name + r_name) <= 1) continue;
 			//if (!r_ptr->level && !mon_allowed(&r_info[j])) continue;
 			if (!mon_allowed_chance(&r_info[j])) continue;
-			if ((j != 0) && ((p_ptr->pclass == CLASS_SHAMAN) && !mimic_shaman(j))) continue;
+			if ((j != 0) && ((p_ptr->pclass == CLASS_SHEMAN) && !mimic_sheman(j))) continue;
 
 			/* Don't accidentally poly into a form that suppresses polymorphing,
 			   to do so you need to use 'Polymorph into...' */
@@ -1655,8 +1655,8 @@ void do_cmd_mimic(int Ind, int spell, int dir) {
 				msg_print(Ind, "You cannot use that form!");
 				Send_confirm(Ind, PKT_ACTIVATE_SKILL);
 				return;
-			} else if (j && p_ptr->pclass == CLASS_SHAMAN && !mimic_shaman(j)) {
-				msg_print(Ind, "As a shaman you cannot use that form!");
+			} else if (j && p_ptr->pclass == CLASS_SHEMAN && !mimic_sheman(j)) {
+				msg_print(Ind, "As a sheman you cannot use that form!");
 				Send_confirm(Ind, PKT_ACTIVATE_SKILL);
 				return;
 			} else if (r_ptr->level > skill_mimic) {

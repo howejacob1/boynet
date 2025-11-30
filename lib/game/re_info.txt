@@ -119,7 +119,7 @@ B:*:*:+1d+2
 F:R_CHAR_T | R_CHAR_P | R_CHAR_O | BASEANGBAND
 M:FORCE_MAXHP | FRIENDS | SMART | DROP_1D2
 
-N:7:Shaman
+N:7:Sheman
 G:*:R
 I:+0:%90d%100:+10:%90:=0
 W:+2:1:%90:%120:A
@@ -693,7 +693,7 @@ S:1_IN_5 | BLINK | BLIND | SLOW | HOLD | SCARE | CURSE | DARKNESS
 #and maybe (could be silyl):
 #Sirene, Mermaid, Zog, Gnome mage, Mind flayer, Halfling slinger
 
-#Bats, shaman, mages, priests etc. that are reckless don't keep their distance in a fight.
+#Bats, sheman, mages, priests etc. that are reckless don't keep their distance in a fight.
 #Tested 21/09/2014
 N:54:Reckless
 G:*:*

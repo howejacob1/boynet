@@ -412,7 +412,7 @@ function quest_towneltalk(Ind, msg, topic)
 				hinted = 1
 				-- display additional tip about using a +STR form
 				if (player.s_info[SKILL_MIMIC+1].value > 0 and player.prace ~= RACE_VAMPIRE) or
-				   player.pclass == CLASS_MIMIC or player.pclass == CLASS_SHAMAN then
+				   player.pclass == CLASS_MIMIC or player.pclass == CLASS_SHEMAN then
 					msg_print(Ind, "\252\255UAlso as a potential mimicry user you could try out forms that give a bonus")
 					msg_print(Ind, "\252\255Uto strength, such as trolls, Forest Troll being the easiest and most useful.")
 					hinted = 1

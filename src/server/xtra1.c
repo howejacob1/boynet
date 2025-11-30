@@ -531,7 +531,7 @@ static void prt_bpr_wraith(int Ind) {
 		if (p_ptr->num_blow == 1) attr = TERM_ORANGE;
 		else if (p_ptr->num_blow == 2) attr = TERM_YELLOW;
 		break;
-	case CLASS_SHAMAN:
+	case CLASS_SHEMAN:
 	case CLASS_ADVENTURER:
 	case CLASS_RUNEMASTER:
 #ifdef ENABLE_CPRIEST
@@ -1345,7 +1345,7 @@ void calc_mana(int Ind) {
 	case CLASS_WARRIOR:
 		new_mana = 0;
 		break;
-	case CLASS_SHAMAN:
+	case CLASS_SHEMAN:
 #if 0
 		/* more Wis than Int --180 */
 		new_mana = get_skill_scale(p_ptr, SKILL_MAGIC, 200) +
@@ -1403,7 +1403,7 @@ void calc_mana(int Ind) {
 		break;
 
 	/* Holy classes and hybrids with focus on attack-casting*/
-	case CLASS_SHAMAN:
+	case CLASS_SHEMAN:
 	case CLASS_RANGER:
 	case CLASS_MINDCRAFTER:
 	case CLASS_DRUID:
@@ -1411,7 +1411,7 @@ void calc_mana(int Ind) {
 #ifdef ENABLE_CPRIEST
 	case CLASS_CPRIEST:
 #endif
-	case CLASS_PRIEST: /* maybe Shamans are treated too good in comparison here */
+	case CLASS_PRIEST: /* maybe Shemans are treated too good in comparison here */
 		if (p_ptr->to_m) new_mana += new_mana * p_ptr->to_m / 130;
 		break;
 
@@ -1529,7 +1529,7 @@ void calc_mana(int Ind) {
 #endif
 	case CLASS_PALADIN: max_wgt = 300 + get_skill_scale(p_ptr, SKILL_COMBAT, 150); break;
 	case CLASS_DRUID: max_wgt = 200 + get_skill_scale(p_ptr, SKILL_COMBAT, 150); break;
-	case CLASS_SHAMAN: max_wgt = 170 + get_skill_scale(p_ptr, SKILL_COMBAT, 150); break;
+	case CLASS_SHEMAN: max_wgt = 170 + get_skill_scale(p_ptr, SKILL_COMBAT, 150); break;
 	case CLASS_ROGUE: max_wgt = 200 + get_skill_scale(p_ptr, SKILL_COMBAT, 150); break;
 	case CLASS_RUNEMASTER: max_wgt = 230 + get_skill_scale(p_ptr, SKILL_COMBAT, 150); break;/*was 270*/
 	case CLASS_MIMIC: max_wgt = 280 + get_skill_scale(p_ptr, SKILL_COMBAT, 150); break;
@@ -2949,10 +2949,10 @@ int calc_blows_obj(int Ind, object_type *o_ptr) {
 		case CLASS_RANGER: num = 5; wgt = 35; mul = 4; break;//mul4
 		case CLASS_DRUID: num = 4; wgt = 35; mul = 4; break;
 		/* if he is to become a spellcaster, necro working on spell-kills:
-		case CLASS_SHAMAN: num = 2; wgt = 40; mul = 3; break;
+		case CLASS_SHEMAN: num = 2; wgt = 40; mul = 3; break;
 		    however, then Martial Arts would require massive nerfing too for this class (or being removed even).
 		    otherwise, let's compromise for now: */
-		case CLASS_SHAMAN: num = 4; wgt = 35; mul = 4; break;
+		case CLASS_SHEMAN: num = 4; wgt = 35; mul = 4; break;
 		case CLASS_MINDCRAFTER: num = 5; wgt = 35; mul = 4; break;//was 4,30,4
 		/*case CLASS_BARD: num = 4; wgt = 35; mul = 4; break; */
 	}
@@ -3893,7 +3893,7 @@ void calc_boni(int Ind) {
 		if (p_ptr->lev >= 15) { p_ptr->can_swim = TRUE; csheet_boni[14].cb[12] |= CB13_XSWIM; }
 	}
 
-	if (p_ptr->pclass == CLASS_SHAMAN)
+	if (p_ptr->pclass == CLASS_SHEMAN)
 		if (p_ptr->lev >= 20) { p_ptr->see_inv = TRUE; csheet_boni[14].cb[4] |= CB5_RSINV; }
 
 	if (p_ptr->pclass == CLASS_DRUID)
@@ -5490,7 +5490,7 @@ void calc_boni(int Ind) {
 						need to hardcode it here to balance
 						'Spectral tyrannosaur' form especially -- note: changed to Gorm.
 						(weap, tors, arms, finger, head, leg) */
-		else if ((p_ptr->pclass == CLASS_SHAMAN) && mimic_shaman_fulleq(r_ptr->d_char))
+		else if ((p_ptr->pclass == CLASS_SHEMAN) && mimic_sheman_fulleq(r_ptr->d_char))
 			body = 1 + 3 + 2 + 1; /* they can wear all items even in these 000000 forms! */
 		else /* normal mimicry */
 			body = (r_ptr->body_parts[BODY_HEAD] ? 1 : 0)
@@ -5818,7 +5818,7 @@ void calc_boni(int Ind) {
 		case CLASS_HELLKNIGHT:
  #endif
 		case CLASS_PALADIN: p_ptr->shield_deflect = p_ptr->shield_deflect; break;
-		case CLASS_SHAMAN: p_ptr->shield_deflect = (p_ptr->shield_deflect * 3 + 3) / 6; break;
+		case CLASS_SHEMAN: p_ptr->shield_deflect = (p_ptr->shield_deflect * 3 + 3) / 6; break;
 		case CLASS_DRUID: p_ptr->shield_deflect = (p_ptr->shield_deflect * 3 + 3) / 6; break;
 		case CLASS_RUNEMASTER: p_ptr->shield_deflect = (p_ptr->shield_deflect * 3 + 3) / 6; break;
 		case CLASS_MINDCRAFTER: p_ptr->shield_deflect = (p_ptr->shield_deflect * 4 + 2) / 6; break;
@@ -5897,7 +5897,7 @@ void calc_boni(int Ind) {
 		case CLASS_HELLKNIGHT:
  #endif
 		case CLASS_PALADIN: p_ptr->weapon_parry = (p_ptr->weapon_parry * 5 + 1) / 6; break;
-		case CLASS_SHAMAN: p_ptr->weapon_parry = (p_ptr->weapon_parry * 3 + 3) / 6; break;
+		case CLASS_SHEMAN: p_ptr->weapon_parry = (p_ptr->weapon_parry * 3 + 3) / 6; break;
 		case CLASS_DRUID: p_ptr->weapon_parry = (p_ptr->weapon_parry * 3 + 3) / 6; break;
 		case CLASS_RUNEMASTER: p_ptr->weapon_parry = (p_ptr->weapon_parry * 4 + 2) / 6; break;
 		case CLASS_MINDCRAFTER: p_ptr->weapon_parry = (p_ptr->weapon_parry * 5 + 1) / 6; break;
@@ -6122,8 +6122,8 @@ void calc_boni(int Ind) {
 
 	/* A perma_cursed weapon stays even in weapon-less body form, reduce blows for that: */
 	if (melee_weapon && p_ptr->body_monster &&
-	    /* Exception: Handle weapon-shamans in shaman-forms that don't have weapons in their 'wild' form */
-	    !(p_ptr->pclass == CLASS_SHAMAN && mimic_shaman_fulleq(r_info[p_ptr->body_monster].d_char)) &&
+	    /* Exception: Handle weapon-shemans in sheman-forms that don't have weapons in their 'wild' form */
+	    !(p_ptr->pclass == CLASS_SHEMAN && mimic_sheman_fulleq(r_info[p_ptr->body_monster].d_char)) &&
 	    /* If we cannot use weapons in this form and actually do get any attacks, reduce them to 1 */
 	    !r_info[p_ptr->body_monster].body_parts[BODY_WEAPON] && p_ptr->num_blow > 1)
 		p_ptr->num_blow = 1;

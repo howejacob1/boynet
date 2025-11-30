@@ -5520,7 +5520,7 @@ void check_experience(int Ind) {
 		if (old_lev < 55 && p_ptr->lev >= 55) msg_format(Ind, "\374\377GYou learn how to change into a Horned Serpent (#%d)", RI_HORNED_SERPENT);
 		if (old_lev < 60 && p_ptr->lev >= 60) msg_format(Ind, "\374\377GYou learn how to change into a Firebird (#%d)", RI_FIREBIRD);
 		break;
-	case CLASS_SHAMAN:
+	case CLASS_SHEMAN:
 		if (old_lev < 20 && p_ptr->lev >= 20
 		    && p_ptr->prace != RACE_ENT && p_ptr->prace != RACE_DARK_ELF
 		    && (p_ptr->prace != RACE_MAIA || p_ptr->ptrait != TRAIT_ENLIGHTENED))
@@ -6770,7 +6770,7 @@ bool monster_death(int Ind, int m_idx) {
 	case 8: case 26: //priests
 		resf_drops |= RESF_COND_BLUNT;
 		break;
-	case 7: //shamans
+	case 7: //shemans
 		resf_drops |= RESF_CONDF_NOSWORD;
 		resf_drops |= RESF_COND2_LARMOUR;
 		break;
@@ -6835,7 +6835,7 @@ bool monster_death(int Ind, int m_idx) {
 		case 1017: case 689: case 1018: case 226: //evil priests
 			resf_drops |= RESF_COND_BLUNT;
 			break;
-		case 888: case 906: case 217: //shamans
+		case 888: case 906: case 217: //shemans
 			resf_drops |= RESF_CONDF_NOSWORD;
 			resf_drops |= RESF_COND2_LARMOUR;
 			break;
@@ -7335,8 +7335,8 @@ bool monster_death(int Ind, int m_idx) {
 			if (pvp && bonus < 3) bonus = 3;
 #endif
 
-			/* Shamans have a chance to learn E and X forms very quickly */
-			if (p_ptr->pclass == CLASS_SHAMAN && (mimic_shaman_E(credit_idx) || r_info[credit_idx].d_char == 'X')
+			/* Shemans have a chance to learn E and X forms very quickly */
+			if (p_ptr->pclass == CLASS_SHEMAN && (mimic_sheman_E(credit_idx) || r_info[credit_idx].d_char == 'X')
 			    && bonus < 2)
 				bonus = 2;
 
@@ -7364,7 +7364,7 @@ bool monster_death(int Ind, int m_idx) {
 			    /* for level 0 townspeople: */
 			    r_info[credit_idx].level == 0)) {
 				if (!((r_ptr->flags1 & RF1_UNIQUE) || (p_ptr->pclass == CLASS_DRUID) ||
-				    ((p_ptr->pclass == CLASS_SHAMAN) && !mimic_shaman(credit_idx)) ||
+				    ((p_ptr->pclass == CLASS_SHEMAN) && !mimic_sheman(credit_idx)) ||
 				    (p_ptr->prace == RACE_VAMPIRE))) {
 					msg_format(Ind, "\374\377UYou have learned the form of %s! (%d)",
 					    r_info[credit_idx].name + r_name, credit_idx);

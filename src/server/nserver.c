@@ -6418,12 +6418,12 @@ int Send_stamina(int Ind, int mst, int cst) {
 	/* can we use stamina at all? */
 	if (is_newer_than(&p_ptr->version, 4, 4, 1, 3, 0, 0) &&
 	    (p_ptr->pclass == CLASS_MAGE
- #if 0 /* 0: priests and shamans can use ST in occult Shadow school */
+ #if 0 /* 0: priests and shemans can use ST in occult Shadow school */
 	    || p_ptr->pclass == CLASS_PRIEST
   #ifdef ENABLE_CPRIEST
 	    || p_ptr->pclass == CLASS_CPRIEST
   #endif
-	    || p_ptr->pclass == CLASS_SHAMAN
+	    || p_ptr->pclass == CLASS_SHEMAN
  #endif
 	    )
  #ifdef ENABLE_DRACONIAN_TRAITS

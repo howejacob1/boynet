@@ -1247,8 +1247,8 @@ CLASS_ROGUE	src/common/defines.h	2455
 CLASS_ROGUE	src/common/defines-player.h	80
 CLASS_RUNEMASTER	src/common/defines.h	2464
 CLASS_RUNEMASTER	src/common/defines-player.h	89
-CLASS_SHAMAN	src/common/defines.h	2463
-CLASS_SHAMAN	src/common/defines-player.h	88
+CLASS_SHEMAN	src/common/defines.h	2463
+CLASS_SHEMAN	src/common/defines-player.h	88
 CLASS_WARRIOR	src/common/defines.h	2452
 CLASS_WARRIOR	src/common/defines-player.h	77
 CLIENT	src/client/nclient.c	23
@@ -18155,9 +18155,9 @@ mimic_immunity	src/common/types.h	3565
 mimic_object	src/server/cave.c	/^static void mimic_object(byte *ap, char32_t *cp, i/
 mimic_power_hindered	src/server/cmd5.c	/^bool mimic_power_hindered(int Ind) {$/
 mimic_seed	src/common/types.h	3564
-mimic_shaman	src/common/defines.h	/^#define mimic_shaman(ridx)	\\$/
-mimic_shaman_E	src/common/defines.h	/^#define mimic_shaman_E(ridx)	\\$/
-mimic_shaman_fulleq	src/common/defines.h	/^#define mimic_shaman_fulleq(c)	(strchr("EGX", c))$/
+mimic_sheman	src/common/defines.h	/^#define mimic_sheman(ridx)	\\$/
+mimic_sheman_E	src/common/defines.h	/^#define mimic_sheman_E(ridx)	\\$/
+mimic_sheman_fulleq	src/common/defines.h	/^#define mimic_sheman_fulleq(c)	(strchr("EGX", c))$/
 mimic_vampire	src/common/defines.h	/^ #define mimic_vampire(ridx, plv)	\\$/
 mimic_vampire	src/common/defines.h	/^ #define mimic_vampire(ridx, plv)	\\$/
 min_columns	src/client/main-xaw.c	184

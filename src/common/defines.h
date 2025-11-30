@@ -1582,7 +1582,7 @@
 /* Monster race indices (r_idx) hardcoded from r_info.txt file.
    Note -- the following code parts still use hard-coded numbers:
    taunt_monsters(), monster_death(), calc_body_bonus(), price_poly_ring(), item_tester_hook_wear(), process_timers()
-   and regarding mimic form handling: mimic_shaman_E, mimic_druid, mimic_vampire,
+   and regarding mimic form handling: mimic_sheman_E, mimic_druid, mimic_vampire,
    and specifically for druid form info: check_experience(), do_cmd_check_extra_info(). */
 #define RI_FARMER_MAGGOT	8
 #define RI_LEPER		13
@@ -1691,7 +1691,7 @@
 #define RI_CHERUB		511	/* SKILL_MIMIC */
 #define RI_WATER_ELEMENTAL	512
 #define RI_HOUND_MULTI		513	/* Druid form */
-#define RI_INVISIBLE_STALKER	514	/* Shaman form (forbidden) */
+#define RI_INVISIBLE_STALKER	514	/* Sheman form (forbidden) */
 #define RI_WATCHER_IN_THE_WATER	517
 #define RI_MASTER_VAMPIRE	520	/* SKILL_MIMIC */
 #define RI_ORIENTAL_VAMPIRE	521	/* SKILL_MIMIC */
@@ -1746,7 +1746,7 @@
 #define RI_NULL_TLV		803	/* font mapping */
 #define RI_FEAGWATH		804
 #define RI_PIT_FIEND		812
-#define RI_UNMAKER		815	/* prevent live spawn; Shaman form (forbidden) */
+#define RI_UNMAKER		815	/* prevent live spawn; Sheman form (forbidden) */
 #define RI_DOL_GULDUR		819	/* 'easy' version of sauron */
 #define RI_MEPHISTOPHELES	831	/* DROP_CHOSEN */
 #define RI_OREMORJ		843	/* note: jokeangband */
@@ -1797,7 +1797,7 @@
 #define RI_WIGHT_KING		971
 #define RI_EXP_POSSESSOR	973	/* (SKILL_MIMIC) */
 #define RI_OLD_POSSESSOR	974	/* (SKILL_MIMIC) */
-#define RI_DEATH_ORB		975	/* Shaman form (forbidden) */
+#define RI_DEATH_ORB		975	/* Sheman form (forbidden) */
 #define RI_AR_PHARAZON		980
 #define RI_ELDER_VAMPIRE	989	/* SKILL_MIMIC */
 #define RI_ULFANG		990
@@ -2460,7 +2460,7 @@
 #define CLASS_ADVENTURER	8
 //#define CLASS_BARD		9
 #define CLASS_DRUID		9
-#define CLASS_SHAMAN		10
+#define CLASS_SHEMAN		10
 #define CLASS_RUNEMASTER	11
 #define CLASS_MINDCRAFTER	12
 #ifdef ENABLE_DEATHKNIGHT
@@ -2492,7 +2492,7 @@
 
 #define CFX	0x0100	/* Adventurer */
 #define CFD	0x0200	/* Druid */
-#define CFS	0x0400	/* Shaman */
+#define CFS	0x0400	/* Sheman */
 #define CFU	0x0800	/* Runemaster */
 
 #define CFC	0x1000	/* Mindcrafter */
@@ -6308,7 +6308,7 @@
 #define RESF_COND_DARKSWORD	0x00800000ULL	/* don't allow weapons besides a dark sword (unbelievers) */
 
 #define RESF_COND_BLUNT		0x01000000ULL	/* don't allow weapons besides a blunt weapon (priests) */
-#define RESF_CONDF_NOSWORD	0x02000000ULL	/* don't allow swords (shamans) -- */
+#define RESF_CONDF_NOSWORD	0x02000000ULL	/* don't allow swords (shemans) -- */
 #define RESF_CONDF_MSTAFF	0x04000000ULL	/* force a mage staff (mages) */
 #define RESF_COND_SLING		0x08000000ULL	/* don't allow weapons besides a sling (clears condition) or ammo (doesn't clear condition) (slingers) */
 
@@ -9649,18 +9649,18 @@ extern int PlayerUID;
 
 
 /* Masks for restricted mimicry */
-/*	Shaman: Animals, Giants, Dragon(rider)s, Elementals/Spirits, Ghosts.
+/*	Sheman: Animals, Giants, Dragon(rider)s, Elementals/Spirits, Ghosts.
 	No undead/nonliving material beings; no Invisible Stalker/Unmaker/Death Orb. */
-#define mimic_shaman(ridx)	\
+#define mimic_sheman(ridx)	\
 	(((ridx) == 0) || \
 	(((r_info[ridx].flags3 & (RF3_ANIMAL | RF3_DRAGON | RF3_GIANT | RF3_DRAGONRIDER)) || \
 	(r_info[ridx].d_char == 'H') || (r_info[ridx].d_char == 'T')) && \
  	!(r_info[ridx].flags3 & (RF3_UNDEAD | RF3_NONLIVING))) || \
-	(r_info[ridx].d_char == 'G') || mimic_shaman_E(ridx) || (r_info[ridx].d_char == 'X') || \
+	(r_info[ridx].d_char == 'G') || mimic_sheman_E(ridx) || (r_info[ridx].d_char == 'X') || \
 	(r_info[ridx].d_char == 'g') || (r_info[ridx].d_char == 'A'))
-#define mimic_shaman_E(ridx)	\
+#define mimic_sheman_E(ridx)	\
 	((r_info[ridx].d_char == 'E') && !((ridx) == RI_INVISIBLE_STALKER || (ridx) == RI_UNMAKER || (ridx) == RI_DEATH_ORB))
-#define mimic_shaman_fulleq(c)	(strchr("EGX", c))
+#define mimic_sheman_fulleq(c)	(strchr("EGX", c))
 /*	Druid: Selected Animals and animal-similar creatures. */
 #define mimic_druid(ridx, plv)	\
 	(((ridx) == 0) || \

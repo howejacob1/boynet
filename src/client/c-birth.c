@@ -891,7 +891,7 @@ static bool choose_class(void) {
 	c_put_str(TERM_SLATE, "Important - These classes are NOT RECOMMENDED for beginners:", n - 3, 2);
 	//c_put_str(TERM_SLATE, "Important: For beginners, classes easy to play are:", n - 3, 2);
 	c_put_str(TERM_ORANGE, "Important", n - 3, 2);
-	c_put_str(TERM_SLATE, "Istar, Priest, Archer, Ranger, Adventurer, Shaman, Runemaster.", n - 2, 2);
+	c_put_str(TERM_SLATE, "Istar, Priest, Archer, Ranger, Adventurer, Sheman, Runemaster.", n - 2, 2);
 	//c_put_str(TERM_SLATE, "Warrior, Rogue, Paladin, Druid, and maybe Archer.", n - 2, 2);
 
 	for (i = 18; i < 24; i++) Term_erase(1, i, 255);
@@ -1885,8 +1885,8 @@ static bool choose_body_modification(void) {
 		if (class == CLASS_ARCHER) {
 			c_put_str(TERM_L_DARK, "f) Fruit bat", 21, 2);
 			c_put_str(TERM_L_DARK, "(WARNING: Do not pick this as Archer, as bats cannot use bows!)", 21, 15);
-		} else if (class == CLASS_MIMIC || class == CLASS_DRUID || class == CLASS_SHAMAN)
-			c_put_str(TERM_SLATE, "(not recommended for shapeshifters: Mimics, Druids, Shamans!)", 21, 15);
+		} else if (class == CLASS_MIMIC || class == CLASS_DRUID || class == CLASS_SHEMAN)
+			c_put_str(TERM_SLATE, "(not recommended for shapeshifters: Mimics, Druids, Shemans!)", 21, 15);
 		else
 			c_put_str(TERM_SLATE, "(Bats are faster and vampiric, but can't wear certain items)", 21, 15);
 	}

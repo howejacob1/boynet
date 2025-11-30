@@ -5592,7 +5592,7 @@ void distract_monsters(int Ind) {
 #if 0 /*actually, being POWERFUL doesn't really protect.. */
 		if (r_ptr->flags2 & RF2_POWERFUL) tauntable = FALSE;
 #endif
-#if 0 /* shamans -_- and not only that, way too many monsters are SMART, so commented out for now */
+#if 0 /* shemans -_- and not only that, way too many monsters are SMART, so commented out for now */
 		if (r_ptr->flags2 & RF2_SMART) tauntable = FALSE; /* smart monsters don't fall for taunts */
 #endif
 		if (r_ptr->flags3 & RF3_NONLIVING) tauntable = FALSE; /* nonliving monsters can't perceive taunts */
@@ -5649,7 +5649,7 @@ void taunt_monsters(int Ind) {
 #if 0 /*actually, being POWERFUL doesn't really protect.. */
 		if (r_ptr->flags2 & RF2_POWERFUL) tauntable = FALSE;
 #endif
-#if 0 /* shamans -_- and not only that, way too many monsters are SMART, so commented out for now */
+#if 0 /* shemans -_- and not only that, way too many monsters are SMART, so commented out for now */
 		if (r_ptr->flags2 & RF2_SMART) tauntable = FALSE; /* smart monsters don't fall for taunts */
 #endif
 		if (r_ptr->flags3 & RF3_NONLIVING) tauntable = FALSE; /* nonliving monsters can't perceive taunts */

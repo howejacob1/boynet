@@ -571,7 +571,7 @@ u32b price_poly_ring(int Ind, object_type *o_ptr, int shop_type) {
 		r_val -= 3000 + (!r_ptr->level ? 3000 : 0);
 
 		/* Greatly reduce value for rings that don't have usable limbs --- keep consistent with item_tester_hook_wear() / do_cmd_mimic() */
-		body_humanoid = (mimic_shaman(o_ptr->pval) && mimic_shaman_fulleq(r_ptr->d_char)) ||
+		body_humanoid = (mimic_sheman(o_ptr->pval) && mimic_sheman_fulleq(r_ptr->d_char)) ||
 		    (r_ptr->body_parts[BODY_HEAD] && r_ptr->body_parts[BODY_TORSO] && r_ptr->body_parts[BODY_ARMS] &&
 		    r_ptr->body_parts[BODY_LEGS] && (r_ptr->body_parts[BODY_FINGER] >= 2) && r_ptr->body_parts[BODY_WEAPON]);
 		if (!body_humanoid) {

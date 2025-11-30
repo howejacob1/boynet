@@ -178,7 +178,7 @@ static hist_type bg[] = {
 
 	{"Cook. ",						  5, 23, 62, 60},
 	{"Warrior. ",						 95, 23, 62, 55},
-	{"Shaman. ",						 99, 23, 62, 65},
+	{"Sheman. ",						 99, 23, 62, 65},
 	{"Clan Chief. ",					100, 23, 62, 80},
 
 	/* Human features */
@@ -405,7 +405,7 @@ static hist_type bg[] = {
 	{"Your father was a fungus farmer, ",			 25, 112, 113, 40},
 	{"Your father was a hunter, ",				 50, 112, 113, 45},
 	{"Your father was a warrior, ",				 75, 112, 113, 50},
-	{"Your father was a shaman, ",				 95, 112, 113, 55},
+	{"Your father was a sheman, ",				 95, 112, 113, 55},
 	{"Your father was the tribal chief, ",			100, 112, 113, 60},
 
 	{"and your mother was a prisoner of war. ",		 20, 113, 114, 45},
@@ -1113,7 +1113,7 @@ static void get_money(int Ind, s16b free_points) {
 	case CLASS_CPRIEST:	//cannot happen here
  #endif
 	case CLASS_PRIEST:      p_ptr->au += 250; break; //						[580]
-	case CLASS_SHAMAN:	p_ptr->au += 250; break; //						[1700 (IV amulet: 1350)]
+	case CLASS_SHEMAN:	p_ptr->au += 250; break; //						[1700 (IV amulet: 1350)]
 
 	/* get starter scroll */
 	case CLASS_MINDCRAFTER:	p_ptr->au += 400; break; //						[600]
@@ -1152,7 +1152,7 @@ static void get_money(int Ind, s16b free_points) {
 	case CLASS_CPRIEST:	//cannot happen here
  #endif
 	case CLASS_PRIEST:      p_ptr->au += 0; break;
-	case CLASS_SHAMAN:	p_ptr->au += 0; break;
+	case CLASS_SHEMAN:	p_ptr->au += 0; break;
 
 	/* get starter scroll */
 	case CLASS_MINDCRAFTER:	p_ptr->au += 200; break;
@@ -1351,7 +1351,7 @@ static byte player_init[2][MAX_CLASS][STARTER_ITEMS][5] = {
 			{ 1, TV_POTION, SV_POTION_INVIS, 0, 0 },
 			{ 1, TV_SOFT_ARMOR, SV_GOWN, 0, 0 },
 			{ 1, 255, 255, 0, 0 },
-		}, { /* Shaman */
+		}, { /* Sheman */
 			{ 1, TV_SOFT_ARMOR, SV_ROBE, 0, 0 },
 			{ 1, TV_BOOK, 61, 0, 0 },
 			{ 1, TV_AMULET, SV_AMULET_INFRA, 3, 0 },
@@ -1479,7 +1479,7 @@ static byte player_init[2][MAX_CLASS][STARTER_ITEMS][5] = {
 			{ 1, TV_POTION, SV_POTION_INVIS, 0, 0 },
 			{ 1, 255, 255, 0, 0 },
 			{ 1, 255, 255, 0, 0 },
-		}, { /* Shaman */
+		}, { /* Sheman */
 			{ 1, TV_BOOK, 61, 0, 0 },
 			{ 1, TV_CLOAK, SV_CLOAK, 0, 0 },
 			{ 1, TV_AMULET, SV_AMULET_INFRA, 3, 0 },
@@ -1792,7 +1792,7 @@ static void player_outfit(int Ind) {
 				case RACE_DRACONIAN:
 					tv = TV_POLEARM; sv = SV_SPEAR; break;
 				} break;
-			case SV_SHADOW_BLADE:/* shaman, shadow blade is just a placeholder */
+			case SV_SHADOW_BLADE:/* sheman, shadow blade is just a placeholder */
 				tv = TV_AXE; sv = SV_CLEAVER;
 				switch (p_ptr->prace) {
 				case RACE_HALF_TROLL:
@@ -3035,21 +3035,21 @@ void disable_specific_warnings(player_type *p_ptr) {
 
 	if (p_ptr->pclass == CLASS_ARCHER ||
 	    p_ptr->pclass == CLASS_ADVENTURER ||
-	    p_ptr->pclass == CLASS_SHAMAN ||
+	    p_ptr->pclass == CLASS_SHEMAN ||
 	    p_ptr->pclass == CLASS_MAGE) {
 		p_ptr->warning_autoret = 99;
 	}
 
 	if (p_ptr->pclass == CLASS_ARCHER ||
 	    p_ptr->pclass == CLASS_ADVENTURER || p_ptr->pclass == CLASS_DRUID ||
-	    p_ptr->pclass == CLASS_MAGE || p_ptr->pclass == CLASS_SHAMAN) {
+	    p_ptr->pclass == CLASS_MAGE || p_ptr->pclass == CLASS_SHEMAN) {
 		p_ptr->warning_wield = 1;
 	}
 
 	/* classes that may go without using any [ranged] weapons don't need a wield-warning */
 	if (p_ptr->pclass == CLASS_ADVENTURER ||
 	    p_ptr->pclass == CLASS_DRUID ||
-	    p_ptr->pclass == CLASS_SHAMAN ||
+	    p_ptr->pclass == CLASS_SHEMAN ||
 	    p_ptr->pclass == CLASS_MAGE)
 		p_ptr->warning_wield_combat = 1;
 
@@ -3639,7 +3639,7 @@ bool player_birth(int Ind, int conn, connection_t *connp) {
 		/* give her/him a free mimic transformation for starting out */
 		if ((p_ptr->pclass == CLASS_ADVENTURER) ||
 		    (p_ptr->pclass == CLASS_MIMIC) ||
-		    (p_ptr->pclass == CLASS_SHAMAN))
+		    (p_ptr->pclass == CLASS_SHEMAN))
 			p_ptr->free_mimic = 1;
 
 		/* a good starter item since we're not going from level 1 */

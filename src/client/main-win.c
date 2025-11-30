@@ -1180,7 +1180,7 @@ static COLORREF win_clr[CLIENT_PALETTE_SIZE + TERMX_AMT] = {
 	PALETTERGB(0xFF, 0xFF, 0xFF),  /* 4 4 4  White */
 	PALETTERGB(0x9D, 0x9D, 0x9D),  /* 2 2 2  Slate */
 	PALETTERGB(0xFF, 0x8D, 0x00),  /* 4 2 0  Orange */
-	PALETTERGB(0xB7, 0x00, 0x00),  /* 3 0 0  Red (was 0xD7,0,0) - making shaman/istar more distinguishable */
+	PALETTERGB(0xB7, 0x00, 0x00),  /* 3 0 0  Red (was 0xD7,0,0) - making sheman/istar more distinguishable */
 	PALETTERGB(0x00, 0x9D, 0x44),  /* 0 2 1  Green */
 #ifndef READABILITY_BLUE
 	PALETTERGB(0x00, 0x00, 0xFF),  /* 0 0 4  Blue */
@@ -1208,7 +1208,7 @@ static COLORREF win_clr[CLIENT_PALETTE_SIZE + TERMX_AMT] = {
 	PALETTERGB(0xFF, 0xFF, 0xFF),  /* 4 4 4  White */
 	PALETTERGB(0x9D, 0x9D, 0x9D),  /* 2 2 2  Slate */
 	PALETTERGB(0xFF, 0x8D, 0x00),  /* 4 2 0  Orange */
-	PALETTERGB(0xB7, 0x00, 0x00),  /* 3 0 0  Red (was 0xD7,0,0) - making shaman/istar more distinguishable */
+	PALETTERGB(0xB7, 0x00, 0x00),  /* 3 0 0  Red (was 0xD7,0,0) - making sheman/istar more distinguishable */
 	PALETTERGB(0x00, 0x9D, 0x44),  /* 0 2 1  Green */
  #ifndef READABILITY_BLUE
 	PALETTERGB(0x00, 0x00, 0xFF),  /* 0 0 4  Blue */

@@ -2115,7 +2115,7 @@ player_race race_info[MAX_RACE] = {
 		72,  6, 180, 25, //same as human
 		66,  4, 150, 20,
 		15,
-		//No paladin,druid,priest,shaman/mimic
+		//No paladin,druid,priest,sheman/mimic
 #ifdef ENABLE_DEATHKNIGHT
 		(CF_ALL & ~CFD & ~CFP & ~CFM & ~CFS & ~CFN) | CFK,
 #else
@@ -3658,7 +3658,7 @@ player_class class_info[MAX_CLASS] = {
 			'+', 1200, },
 		}, },
 
-	{ "Shaman", /* by C. Blue -- Minor shapechange (restrictions), Necromancy/Praying/Magic */
+	{ "Sheman", /* by C. Blue -- Minor shapechange (restrictions), Necromancy/Praying/Magic */
 		TERM_L_RED, FALSE, 0,
 		{ 0, 1, 2, -2, 0, 0},
 		{0, 0, 0, 0, 0, 0},
@@ -3670,7 +3670,7 @@ player_class class_info[MAX_CLASS] = {
 		3, 40, //3, 45
 
 		{
-#if 0 /* mimicmage/mimicpriest/mimicmagepriest pure caster shaman as actually intended */
+#if 0 /* mimicmage/mimicpriest/mimicmagepriest pure caster sheman as actually intended */
 		{ SKILL_COMBAT,
 			'+', 0,
 			'+', 300, },//priests=750,istari=300
@@ -3747,7 +3747,7 @@ player_class class_info[MAX_CLASS] = {
 			'+', 1000,
 			'+', 900, },
  #endif
- #if 1 // Non-mana runes, the primal elements of Shaman wizardry. - Kurzel
+ #if 1 // Non-mana runes, the primal elements of Sheman wizardry. - Kurzel
  		{ SKILL_R_LITE,
 			'+', 0,
 			'+', 700, }, // Lesser of the ratio of prayer schools.
@@ -3798,7 +3798,7 @@ player_class class_info[MAX_CLASS] = {
 		{ SKILL_CALMNESS,
 			'+', 0,
 			'+', 1100, },
-#else /* fighting shamans, rivalling priests/paladins/rangers - currently enabled \
+#else /* fighting shemans, rivalling priests/paladins/rangers - currently enabled \
 	 since offensive spells are lacking, until spell system gets reworked */
 		{ SKILL_AXE,
 			'+', 0,
@@ -3893,7 +3893,7 @@ player_class class_info[MAX_CLASS] = {
 			'+', 1000,
 			'+', 900, },
  #endif
- #if 1 // Non-mana runes, the primal elements of Shaman wizardry. - Kurzel
+ #if 1 // Non-mana runes, the primal elements of Sheman wizardry. - Kurzel
  		{ SKILL_R_LITE,
 			'+', 0,
 			'+', 700, }, // Lesser of the ratio of prayer schools.
@@ -3963,7 +3963,7 @@ player_class class_info[MAX_CLASS] = {
  *   HD, Exp*/
 		35, 32, 20,  3, 30, 26, 45, 40,
 		12, 12, 10,  0,  5,  5, 25, 30,
-		 4, 40, //4 is the minimum without form/shield? XP penalty similar to shaman. - Kurzel
+		 4, 40, //4 is the minimum without form/shield? XP penalty similar to sheman. - Kurzel
 
 		{{ SKILL_COMBAT,
 			'+', 0,
@@ -4288,7 +4288,7 @@ player_class class_info[MAX_CLASS] = {
  #endif
  #ifdef ENABLE_RUNEKNIGHT
 			/* Experimental access to weaker runes after much playtesting and RFE for runes outside of runemaster. Enables a more knight-like rune class option. - Kurzel */
-			/* Not too frosty! Keeping ratios low to limit otherwise hardy ice-blood caster paladins. Note vampires already boost nether rune ratio, compare rune-shaman. */
+			/* Not too frosty! Keeping ratios low to limit otherwise hardy ice-blood caster paladins. Note vampires already boost nether rune ratio, compare rune-sheman. */
 			/* Use adventurer ratios, based on skill-builder experiments. */
 		{ SKILL_R_DARK,
 			'+', 0,
@@ -4900,20 +4900,20 @@ cptr player_title[MAX_CLASS][11][4] = {
 		{"Arch-Druid", "Arch-Druid", "Arch-Druid", "Arch-Druid", }, //was Arch Druid
 	},
 
-	/* Shaman */
+	/* Sheman */
 	{
-		{"Smoker", "Smoker", "Smoker", "Smoker", },
-		{"Novice Walker", "Novice Walker", "Nov. Walker", "Nov. Walker", },
-		{"Walker", "Walker", "Walker", "Walker", },
-		{"Spiritwalker", "Spiritwalker", "Spiritwalker", "Spiritwalker", },
-		{"Bonecaster", "Bonecaster", "Bonecaster", "Bonecaster", },
-		{"Bonefletcher", "Bonefletcher", "Bonefletchr", "Bonefletchr", },
-		{"Cursed", "Cursed", "Cursed", "Cursed", },
-		{"Chanter", "Chantress", "Chanter", "Chantress", },
-		{"Elder Chanter", "Elder Chantress", "Eld.Chanter", "El.Chantress", },
+		{"Cisgender", "Cisgender", "Cisgender", "Cisgender", },
+		{"Bi-Curious", "Bi-Curious", "Bi-Curious", "Bi-Curious", },
+		{"Bisexual", "Bisexual", "Bisexual", "Bisexual", },
+		{"Gay", "Gay", "Gay", "Gay", },
+		{"Pansexual", "Pansexual", "Pansexual", "Pansexual", },
+		{"Asexual", "Asexual", "Asexual", "Asexual", },
+		{"Furry", "Furry", "Furry", "Furry", },
+		{"Trans", "Trans", "Trans", "Trans", },
+		{"Genderfluid", "Genderfluid", "Genderfluid", "Genderfluid", },
 		//{"Spiritwatcher", "Spiritwatcher", },
-		{"Shaman", "Shaman", "Shaman", "Shaman", },
-		{"Elder Shaman", "Elder Shaman", "Elder Shaman", "Elder Shaman", },
+		{"Zi/Xir/Jhem", "Zi/Xir/Jhem", "Zi/Xir/Jhem", "Zi/Xir/Jhem", },
+		{"FatActivist", "FatActivist", "FatActivist", "FatActivist", },
 	},
 
 	/* Runemaster */
@@ -5139,7 +5139,7 @@ cptr player_title_special[MAX_CLASS][5][4] = {
 		{"Evergreen", "Evergreen", "Evergreen", "Evergreen", },
 	},
 
-	/* Shaman */
+	/* Sheman */
 	{
 		{"Spirit Keeper", "Spirit Keeper", "Sprt.Keeper", "Sprt.Keeper", },
 		{"Spirit Master", "Spirit Mistress", "Sprt.Master", "Spt.Mistress", },
@@ -5450,7 +5450,7 @@ byte mtech_lev[MAX_CLASS][16] = {
 	{3,	8,	0,	13,	0,	0,	7,	0,	0,	0,	17,	0,	0,	0,	0,	0},	//ranger
 	{3,	5,	9,	13,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},	//adventurer
 	{5,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},	//druid
-	{0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},	//shaman
+	{0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},	//sheman
 	{4,	6,	8,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},	//runemaster
 	{0,	8,	0,	13,	12,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},	//mindcrafter
 #ifdef ENABLE_DEATHKNIGHT

@@ -7353,11 +7353,11 @@ else s_printf("\n");
 	case CLASS_MINDCRAFTER:
 		r_ptr->freq_innate = r_ptr->freq_spell = magicness ? (50 + magicness > 85 ? 85 : 50 + magicness) : 0;
 		break;
-	case CLASS_SHAMAN:
+	case CLASS_SHEMAN:
 		r_ptr->freq_innate = r_ptr->freq_spell = magicness ? (75 + magicness > 90 ? 90 : 75 + magicness) : 0;
 		break;
 	case CLASS_ADVENTURER:
-		//pfft, we just have no clue.. :/ just pick shaman-like values for now
+		//pfft, we just have no clue.. :/ just pick sheman-like values for now
 		r_ptr->freq_innate = r_ptr->freq_spell = magicness ? (75 + magicness > 90 ? 90 : 75 + magicness) : 0;
 		break;
 	case CLASS_RUNEMASTER:

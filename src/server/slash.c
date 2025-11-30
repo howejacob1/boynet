@@ -2091,7 +2091,7 @@ void do_slash_cmd(int Ind, char *message, char *message_u) {
 			} else if (get_skill(p_ptr, SKILL_MIMIC) &&
 			    !((p_ptr->pclass == CLASS_DRUID) && !mimic_druid(r_idx, p_ptr->lev)) &&
 			    !((p_ptr->prace == RACE_VAMPIRE) && !mimic_vampire(r_idx, p_ptr->lev)) &&
-			    !((p_ptr->pclass == CLASS_SHAMAN) && !mimic_shaman(r_idx)))
+			    !((p_ptr->pclass == CLASS_SHEMAN) && !mimic_sheman(r_idx)))
 			{
 				i = r_ptr->level - numf;
 				if (p_ptr->tim_mimic && r_idx == p_ptr->tim_mimic_what) {
@@ -4932,7 +4932,7 @@ void do_slash_cmd(int Ind, char *message, char *message_u) {
 			else if (!strcmp(message3, "ranger")) class = CLASS_RANGER;
 			else if (!strcmp(message3, "adventurer")) class = CLASS_ADVENTURER;
 			else if (!strcmp(message3, "druid")) class = CLASS_DRUID;
-			else if (!strcmp(message3, "shaman")) class = CLASS_SHAMAN;
+			else if (!strcmp(message3, "sheman")) class = CLASS_SHEMAN;
 			else if (!strcmp(message3, "runemaster")) class = CLASS_RUNEMASTER;
 			else if (!strcmp(message3, "mindcrafter")) class = CLASS_MINDCRAFTER;
 			else {

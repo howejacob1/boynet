@@ -3128,7 +3128,7 @@ void do_cmd_show_monster_killed_letter(int Ind, char *letter, int minlev, bool u
 			    !(((mimic && (mimic >= r_ptr->level)) || druid_form || vampire_form) &&
 			    !((p_ptr->pclass == CLASS_DRUID) && !mimic_druid(i, p_ptr->lev)) &&
 			    !((p_ptr->prace == RACE_VAMPIRE) && !mimic_vampire(i, p_ptr->lev)) &&
-			    !(p_ptr->pclass == CLASS_SHAMAN && !mimic_shaman(i)))
+			    !(p_ptr->pclass == CLASS_SHEMAN && !mimic_sheman(i)))
 			    )
 				continue;
 
@@ -3151,7 +3151,7 @@ void do_cmd_show_monster_killed_letter(int Ind, char *letter, int minlev, bool u
 		else if (((mimic && (mimic >= r_ptr->level)) || druid_form || vampire_form) &&
 		    !((p_ptr->pclass == CLASS_DRUID) && !mimic_druid(i, p_ptr->lev)) &&
 		    !((p_ptr->prace == RACE_VAMPIRE) && !mimic_vampire(i, p_ptr->lev)) &&
-		    !(p_ptr->pclass == CLASS_SHAMAN && !mimic_shaman(i)))
+		    !(p_ptr->pclass == CLASS_SHEMAN && !mimic_sheman(i)))
 		{
 			forms++;
 			j = r_ptr->level - numf;
@@ -3170,7 +3170,7 @@ void do_cmd_show_monster_killed_letter(int Ind, char *letter, int minlev, bool u
 				else {
 					//maybe todo: display real kills to go instead of form credit counter -
 					// rpg-server: instant form learn chance 1 in level-killcount; pvp mode: +3;
-					// shaman E/X +2; iddc: +1 (no) or +IDDC_MIMICRY_BOOST [9] (yes); (normal is +0 bonus)
+					// sheman E/X +2; iddc: +1 (no) or +IDDC_MIMICRY_BOOST [9] (yes); (normal is +0 bonus)
 
 					/* the 'usable' version (default) */
 					if (!r_ptr->dup_idx)
@@ -4079,7 +4079,7 @@ void do_cmd_check_extra_info(int Ind, bool admin) {
 	/* just use item_tester_hook_wear() to prevent duplicate stuff.. */
 	if (p_ptr->body_monster &&
 	    p_ptr->pclass != CLASS_DRUID && p_ptr->prace != RACE_VAMPIRE &&
-	    (p_ptr->pclass != CLASS_SHAMAN || !mimic_shaman_fulleq(r_info[p_ptr->body_monster].d_char))) {
+	    (p_ptr->pclass != CLASS_SHEMAN || !mimic_sheman_fulleq(r_info[p_ptr->body_monster].d_char))) {
 		msg_print(Ind, "In your current form...");
 		if (item_tester_hook_wear(Ind, INVEN_WIELD)) msg_print(Ind, "  you are able to wield a weapon.");
 		else msg_print(Ind, "  you cannot wield weapons.");

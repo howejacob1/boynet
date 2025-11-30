@@ -4286,7 +4286,7 @@ static void display_weapon_damage(int Ind, object_type *o_ptr, FILE *fff, u32b f
 			if (p_ptr->num_blow == 1) attr = TERM_ORANGE;
 			else if (p_ptr->num_blow == 2) attr = TERM_YELLOW;
 			break;
-		case CLASS_SHAMAN:
+		case CLASS_SHEMAN:
 		case CLASS_ADVENTURER:
 		case CLASS_RUNEMASTER:
 		case CLASS_PRIEST:
