@@ -3811,10 +3811,10 @@ player_class class_info[MAX_CLASS] = {
 			'+', 450, },
 		{ SKILL_MARTIAL_ARTS,
 			'+', 0,
-			'+', 400, },
+			'+', 600, },
 		{ SKILL_COMBAT,
 			'+', 0,
-			'+', 300,},//priests=750,istari=300
+			'+', 600,},//priests=750,istari=300
 		{ SKILL_MASTERY,
 			'+', 0,
 			'+', 150, },
@@ -3912,7 +3912,7 @@ player_class class_info[MAX_CLASS] = {
  #endif
 		{ SKILL_MIMIC,
 			'+', 1000,
-			'+', 800,
+			'+', 1000,
 				/* only: giant, dragon, animal, ghost, elemental, DR */ },
 		{ SKILL_SNEAKINESS,
 			'+', 0,
