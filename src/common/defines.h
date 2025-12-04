@@ -9497,6 +9497,7 @@ extern int PlayerUID;
  #undef RESET_SKILL_DISABLE_SOME_SKILLS
  #undef RESET_SKILL_ONLY_ONCE
  #undef RESET_SKILL_ONLY_ONE_LEVEL
+ #define RESET_SKILL_ALL_SKILLS		/* Allow any skill to be reset (removes core skill restrictions) */
  #define BACT_LOSE_MEMORIES		74
  #define RESET_SKILL_HINT_LEVEL		20	/* Level at which to hint about skill reset feature */
 #endif

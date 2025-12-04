@@ -12114,6 +12114,7 @@ void handle_request_return_cfr(int Ind, int id, bool cfr) {
 			msg_print(Ind, "\377yThis is not a valid skill to reset.");
 			return;
 		}
+#ifndef RESET_SKILL_ALL_SKILLS
 		/* Exceptions: Some core skills. */
 		switch (i) {
 		case SKILL_MARTIAL_ARTS:
@@ -12130,6 +12131,7 @@ void handle_request_return_cfr(int Ind, int id, bool cfr) {
 			msg_print(Ind, "\377yThis is not a valid skill to reset.");
 			return;
 		}
+#endif
 
 		/* Double-check restrictions */
 		if (p_ptr->mode & MODE_PVP) {
