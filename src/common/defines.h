@@ -1066,6 +1066,10 @@
    When enabled, true artifacts will never be removed except on death. */
 #define PRESERVE_TRUE_ARTIFACTS
 
+/* Make artifacts immune to disenchantment?
+   When enabled, artifacts will never get disenchanted (normally 20-30% chance to fail resist). */
+#define ARTIFACTS_NEVER_DISENCHANT
+
 /* Disable life force draining from equipment with TR3_DRAIN_EXP flag?
    When enabled, items with experience draining will not drain EXP and won't show drain messages. */
 #define DISABLE_EXP_DRAINING

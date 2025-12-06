@@ -4155,9 +4155,14 @@ bool apply_disenchant(int Ind, int mode) {
 		return(TRUE);
 	}
 
+#ifdef ARTIFACTS_NEVER_DISENCHANT
+	/* Artifacts always resist disenchantment */
+	if (artifact_p(o_ptr) || true_artifact_p(o_ptr)) {
+#else
 	/* Artifacts have 70%(randart) or 80%(trueart) chance to resist */
 	if ((artifact_p(o_ptr) && (rand_int(100) < 70)) ||
 	    (true_artifact_p(o_ptr) && (rand_int(100) < 80))) {
+#endif
 		/* Message */
 		msg_format(Ind, "Your %s (%c) resist%s!",
 				   o_name, index_to_label(t),
