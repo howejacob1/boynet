@@ -915,10 +915,10 @@ bool quaff_potion(int Ind, int tval, int sval, int pval) {
 			if (set_fast(Ind, randint(25) + 15, 10)) ident = TRUE; /* removed stacking */
 			break;
 		case SV_POTION_RESIST_HEAT:
-			if (set_oppose_fire(Ind, randint(10) + 10)) ident = TRUE; /* removed stacking */
+			if (set_oppose_fire(Ind, randint(10) + 50)) ident = TRUE; /* removed stacking */
 			break;
 		case SV_POTION_RESIST_COLD:
-			if (set_oppose_cold(Ind, randint(10) + 10)) ident = TRUE; /* removed stacking */
+			if (set_oppose_cold(Ind, randint(10) + 50)) ident = TRUE; /* removed stacking */
 			break;
 		case SV_POTION_HEROISM:
 			if (set_hero(Ind, randint(25) + 25)) ident = TRUE; /* removed stacking */
@@ -1153,11 +1153,11 @@ bool quaff_potion(int Ind, int tval, int sval, int pval) {
 			break;
 		case SV_POTION_RESISTANCE:
 			ident =
-				set_oppose_acid(Ind, randint(20) + 20) +
-				set_oppose_elec(Ind, randint(20) + 20) +
-				set_oppose_fire(Ind, randint(20) + 20) +
-				set_oppose_cold(Ind, randint(20) + 20) +
-				set_oppose_pois(Ind, randint(20) + 20); /* removed stacking */
+				set_oppose_acid(Ind, randint(20) + 100) +
+				set_oppose_elec(Ind, randint(20) + 100) +
+				set_oppose_fire(Ind, randint(20) + 100) +
+				set_oppose_cold(Ind, randint(20) + 100) +
+				set_oppose_pois(Ind, randint(20) + 100); /* removed stacking */
 			break;
 #ifdef EXPAND_TV_POTION
 		//max sanity of a player can go up to around 900 later!
