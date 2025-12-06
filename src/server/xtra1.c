@@ -1838,7 +1838,7 @@ void calc_hitpoints(int Ind) {
 #endif
 		}
 
-		finalHP = (mHPLim < mhp) ? (((mhp * 4) + (mHPLim * 1)) / 5) : (((mHPLim * 2) + (mhp * 3)) / 5);
+		finalHP = (mHPLim < mhp) ? (((mhp * 4) + (mHPLim * 1)) / 5) : ((mHPLim + mhp) / 2); /* 50% form, 50% player */
 		finalHP += (raceHPbonus * 3) / FORM_REDUCES_RACE_DICE_INFLUENCE;
 
 		/* Reduce for pvp, or mimicry is too good */
